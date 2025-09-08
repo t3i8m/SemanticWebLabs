@@ -1,0 +1,33 @@
+@prefix lotr: <http://example.org/lotr/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lotr:Artifact a rdfs:Class .
+
+lotr:Character a rdfs:Class ;
+    rdfs:subClassOf schema:Person .
+
+lotr:DarkLord rdfs:subClassOf lotr:Character .
+
+lotr:Hobbit rdfs:subClassOf lotr:Character .
+
+lotr:Wizard rdfs:subClassOf lotr:Character .
+
+lotr:hasAge a rdf:Property ;
+    rdfs:domain lotr:Character ;
+    rdfs:range xsd:integer .
+
+lotr:hasDestructionDate a rdf:Property ;
+    rdfs:domain lotr:Artifact ;
+    rdfs:range xsd:dateTime .
+
+lotr:hasFriend a rdf:Property ;
+    rdfs:domain lotr:Character ;
+    rdfs:range lotr:Character .
+
+lotr:isBearerOf a rdf:Property ;
+    rdfs:domain lotr:Character ;
+    rdfs:range lotr:Artifact .
+

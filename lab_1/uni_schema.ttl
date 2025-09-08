@@ -1,0 +1,23 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uni: <http://example.org/uni/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uni:Person a rdfs:Class .
+
+uni:Professor a rdfs:Class ;
+    rdfs:subClassOf uni:Person .
+
+uni:Student a rdfs:Class ;
+    rdfs:subClassOf uni:Person .
+
+<http://example.org/lotr/advises> rdfs:range uni:Student .
+
+uni:advises a rdf:Property ;
+    rdfs:domain uni:Professor ;
+    rdfs:range uni:Student .
+
+uni:hasName a rdf:Property ;
+    rdfs:domain xsd:string ;
+    rdfs:range xsd:string .
+
