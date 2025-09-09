@@ -1,0 +1,95 @@
+@prefix ex: <http://semanticweb2025.group5/vinted/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Accessories a rdfs:Class ;
+    rdfs:subClassOf ex:Men .
+
+ex:Bags a rdfs:Class ;
+    rdfs:subClassOf ex:Women .
+
+ex:Books a rdfs:Class ;
+    rdfs:subClassOf ex:Entertainment .
+
+ex:Category a rdfs:Class .
+
+ex:Clothing a rdfs:Class ;
+    rdfs:subClassOf ex:Women .
+
+ex:CookwareBakeware a rdfs:Class ;
+    rdfs:subClassOf ex:Home .
+
+ex:Entertainment a rdfs:Class ;
+    rdfs:subClassOf ex:Category .
+
+ex:Grooming a rdfs:Class ;
+    rdfs:subClassOf ex:Men .
+
+ex:Home a rdfs:Class ;
+    rdfs:subClassOf ex:Category .
+
+ex:Kids a rdfs:Class ;
+    rdfs:subClassOf ex:Category .
+
+ex:Men a rdfs:Class ;
+    rdfs:subClassOf ex:Category .
+
+ex:Music a rdfs:Class ;
+    rdfs:subClassOf ex:Entertainment .
+
+ex:PetCare a rdfs:Class ;
+    rdfs:subClassOf ex:Home .
+
+ex:Shoes a rdfs:Class ;
+    rdfs:subClassOf ex:Women .
+
+ex:SmallKitchenAppliances a rdfs:Class ;
+    rdfs:subClassOf ex:Home .
+
+ex:Video a rdfs:Class ;
+    rdfs:subClassOf ex:Entertainment .
+
+ex:Women a rdfs:Class ;
+    rdfs:subClassOf ex:Category .
+
+schema:Brand a rdfs:Class .
+
+schema:Product a rdfs:Class .
+
+ex:collaborationBrand a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range schema:Brand ;
+    rdfs:subPropertyOf schema:brand .
+
+ex:primaryCategory a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range ex:Category ;
+    rdfs:subPropertyOf schema:category .
+
+ex:secondaryCategory a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range ex:Category ;
+    rdfs:subPropertyOf schema:category .
+
+schema:color a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range xsd:string .
+
+schema:material a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range xsd:string .
+
+schema:name a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range xsd:string .
+
+schema:brand a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range schema:Brand .
+
+schema:category a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range ex:Category .
+
