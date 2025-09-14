@@ -94,11 +94,13 @@ g.add((SCHEMA.color, RDF.type, RDF.Property))
 g.add((SCHEMA.color, RDFS.domain, SCHEMA.Product))
 g.add((SCHEMA.color, RDFS.range,  XSD.string))
 
-g.add((SCHEMA.material, RDF.type, RDF.Property))
-g.add((SCHEMA.material, RDFS.domain, SCHEMA.Product))
-g.add((SCHEMA.material, RDFS.range,  XSD.string))
+g.add((SCHEMA.itemCondition, RDF.type, RDF.Property))
+g.add((SCHEMA.itemCondition, RDFS.domain, SCHEMA.Product))
+g.add((SCHEMA.itemCondition, RDFS.range,  XSD.string))
 
-g.add((SCHEMA.material, RDF.type, RDF.Property))
+g.add((SCHEMA.size, RDF.type, RDF.Property))
+g.add((SCHEMA.size, RDFS.domain, SCHEMA.Product))
+g.add((SCHEMA.size, RDFS.range,  XSD.string))
 
 g.serialize(destination="vinted_schema.ttl", format="turtle")
 print("Saved to vinted_schema.ttl")

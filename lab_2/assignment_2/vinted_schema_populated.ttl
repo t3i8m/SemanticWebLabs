@@ -1,0 +1,694 @@
+@prefix ex: <http://semanticweb2025.group5/vinted/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Accessories a rdfs:Class ;
+    rdfs:subClassOf ex:Men .
+
+ex:Bags a rdfs:Class ;
+    rdfs:subClassOf ex:Women .
+
+ex:Books a rdfs:Class ;
+    rdfs:subClassOf ex:Entertainment .
+
+ex:Category a rdfs:Class .
+
+ex:Clothing a rdfs:Class ;
+    rdfs:subClassOf ex:Women .
+
+ex:CookwareBakeware a rdfs:Class ;
+    rdfs:subClassOf ex:Home .
+
+ex:Entertainment a rdfs:Class ;
+    rdfs:subClassOf ex:Category .
+
+ex:Grooming a rdfs:Class ;
+    rdfs:subClassOf ex:Men .
+
+ex:Home a rdfs:Class ;
+    rdfs:subClassOf ex:Category .
+
+ex:Kids a rdfs:Class ;
+    rdfs:subClassOf ex:Category .
+
+ex:Men a rdfs:Class ;
+    rdfs:subClassOf ex:Category .
+
+ex:Music a rdfs:Class ;
+    rdfs:subClassOf ex:Entertainment .
+
+ex:PetCare a rdfs:Class ;
+    rdfs:subClassOf ex:Home .
+
+ex:Shoes a rdfs:Class ;
+    rdfs:subClassOf ex:Women .
+
+ex:SmallKitchenAppliances a rdfs:Class ;
+    rdfs:subClassOf ex:Home .
+
+ex:Video a rdfs:Class ;
+    rdfs:subClassOf ex:Entertainment .
+
+ex:Women a rdfs:Class ;
+    rdfs:subClassOf ex:Category .
+
+schema:Brand a rdfs:Class .
+
+schema:Product a rdfs:Class .
+
+ex:collaborationBrand a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range schema:Brand ;
+    rdfs:subPropertyOf schema:brand .
+
+ex:item_AbercrombieFitchCroppedSweaterJuniorsOrWomensSizeXSFall_7057532907 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Clothing ;
+    schema:brand ex:AbercrombieFitch ;
+    schema:color "White"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Abercrombie & Fitch Cropped Sweater Juniors Or Women’s Size XS Fall"^^xsd:string ;
+    schema:price "5.0"^^xsd:float ;
+    schema:size "4"^^xsd:string .
+
+ex:item_BillieEilishHitMeHardAndSoft_6915157257 a schema:Product ;
+    ex:primaryCategory ex:Entertaiment ;
+    ex:secondaryCategory ex:Music ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Hit me hard and soft album record"^^xsd:string ;
+    schema:price "11.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_BlackAndWhiteConverseShoes_7072439359 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Shoes ;
+    schema:brand ex:Converse ;
+    schema:color "Black, White"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "black and white Converse shoes"^^xsd:string ;
+    schema:price "16.0"^^xsd:float ;
+    schema:size "8"^^xsd:string .
+
+ex:item_BlackRelaxEmpyreSkaterBlack_7071973949 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Clothing ;
+    schema:brand ex:Empyre ;
+    schema:color "Black, Gray"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Black Relax Empyre Skater Black"^^xsd:string ;
+    schema:price "13.0"^^xsd:float ;
+    schema:size "4"^^xsd:string .
+
+ex:item_ButterflyEffectCollectionDVD_2653528041 a schema:Product ;
+    ex:primaryCategory ex:Entertaiment ;
+    ex:secondaryCategory ex:Video ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "The Butterfly Effect Collection DVD"^^xsd:string ;
+    schema:price "1.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_CasseroleSetOf4_6733481436 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Cookwarebakeware ;
+    schema:brand ex:Dolly ;
+    schema:color "White"^^xsd:string ;
+    schema:itemCondition "New with tags"^^xsd:string ;
+    schema:name "casserole set of 4"^^xsd:string ;
+    schema:price "20.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_Chogan118_3162020098 a schema:Product ;
+    ex:primaryCategory ex:Men ;
+    ex:secondaryCategory ex:Grooming ;
+    schema:brand ex:Chogan ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "New with tags"^^xsd:string ;
+    schema:name "Chogan Parfüm Nr.118"^^xsd:string ;
+    schema:price "45.0"^^xsd:float ;
+    schema:size "50ml"^^xsd:string .
+
+ex:item_CoachSignaturePurse_7051847400 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Bags ;
+    schema:brand ex:Coach ;
+    schema:color "Black"^^xsd:string ;
+    schema:itemCondition "Very good "^^xsd:string ;
+    schema:name "Coach signature Purse"^^xsd:string ;
+    schema:price "55.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_CoffeeShopClearanceEspressoMachine_7044963349 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Smallkitchenappliances ;
+    schema:brand ex:Espresso ;
+    schema:color "Silver"^^xsd:string ;
+    schema:itemCondition "Very Good "^^xsd:string ;
+    schema:name "Coffee shop clearance: Espresso machine - great deal"^^xsd:string ;
+    schema:price "55.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_Corningware_7059123811 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Cookwarebakeware ;
+    schema:brand ex:Corningware ;
+    schema:color "White"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Corningware"^^xsd:string ;
+    schema:price "12.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_CrockPotSmall_7008639345 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Cookwarebakeware ;
+    schema:brand ex:CrockPot ;
+    schema:color "Silver, Black"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Crock pot small"^^xsd:string ;
+    schema:price "10.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_CrockPot_7016875144 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Smallkitchenappliances ;
+    schema:brand ex:Ideal ;
+    schema:color "Black, Silver"^^xsd:string ;
+    schema:itemCondition "Good "^^xsd:string ;
+    schema:name "Crock pot"^^xsd:string ;
+    schema:price "5.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_CuteVintagePolkaDotTote_7028968164 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Bags ;
+    schema:brand ex:UniqueVintage ;
+    schema:color "Black, White"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Cute Vintage Polka Dot Tote, Folds Up Small To Put in a Purse/Luggage, Viola' another Tote!"^^xsd:string ;
+    schema:price "7.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_DiorHomme_4241982335 a schema:Product ;
+    ex:primaryCategory ex:Men ;
+    ex:secondaryCategory ex:Grooming ;
+    schema:brand ex:Dior ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "New with tags"^^xsd:string ;
+    schema:name "Dior Homme After Shave"^^xsd:string ;
+    schema:price "40.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_EagleBelt_7065905467 a schema:Product ;
+    ex:primaryCategory ex:Men ;
+    ex:secondaryCategory ex:Accessories ;
+    schema:brand ex:NOLABEL ;
+    schema:color "Black, Silver"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Eagle Leather Belt"^^xsd:string ;
+    schema:price "10.0"^^xsd:float ;
+    schema:size "32 in"^^xsd:string .
+
+ex:item_EdHardyBelt_7010159956 a schema:Product ;
+    ex:primaryCategory ex:Men ;
+    ex:secondaryCategory ex:Accessories ;
+    schema:brand ex:EdHardy ;
+    schema:color "Red"^^xsd:string ;
+    schema:itemCondition "New with tags"^^xsd:string ;
+    schema:name "Ed Hardy Panther Print Red Belt With Rivet Studs"^^xsd:string ;
+    schema:price "20.0"^^xsd:float ;
+    schema:size "Adjustable"^^xsd:string .
+
+ex:item_EnhypenRomanceUntoldAlbum_6871106441 a schema:Product ;
+    ex:primaryCategory ex:Entertaiment ;
+    ex:secondaryCategory ex:Music ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Enhypen Romance: Untold Engene Ver Album"^^xsd:string ;
+    schema:price "5.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_GuyClarac_2259238450 a schema:Product ;
+    ex:primaryCategory ex:Men ;
+    ex:secondaryCategory ex:Accessories ;
+    schema:brand ex:GuyClarac ;
+    schema:color "Silver"^^xsd:string ;
+    schema:itemCondition "Good"^^xsd:string ;
+    schema:name "Montre homme Guy Clarac"^^xsd:string ;
+    schema:price "15.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_HocusPocusCookieCutters_6964566662 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Cookwarebakeware ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "Multi"^^xsd:string ;
+    schema:itemCondition "New with tags"^^xsd:string ;
+    schema:name "Hocus pocus cookie cutters"^^xsd:string ;
+    schema:price "3.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_ISpyThingThatFlingsDVD_7061364696 a schema:Product ;
+    ex:primaryCategory ex:Entertaiment ;
+    ex:secondaryCategory ex:Video ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "Good"^^xsd:string ;
+    schema:name "I Spy a thing that flings and other stories DVD"^^xsd:string ;
+    schema:price "5.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_IbexBelt_7044814371 a schema:Product ;
+    ex:primaryCategory ex:Men ;
+    ex:secondaryCategory ex:Accessories ;
+    schema:brand ex:ibex ;
+    schema:color "Brown, Gold"^^xsd:string ;
+    schema:itemCondition "Good"^^xsd:string ;
+    schema:name "Vintage Ibex Brown Leather Belt Men’s 46"^^xsd:string ;
+    schema:price "40.0"^^xsd:float ;
+    schema:size "45 in"^^xsd:string .
+
+ex:item_JackSkellington_7072326409 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Smallkitchenappliances ;
+    schema:brand ex:Jack ;
+    schema:color "Black, White"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Jack skellington"^^xsd:string ;
+    schema:price "14.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_KhakiBoots_7029761685 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Shoes ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "Khaki"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "khaki green knee high boots punk with buckle detail"^^xsd:string ;
+    schema:price "20.0"^^xsd:float ;
+    schema:size "7"^^xsd:string .
+
+ex:item_LanaDelReyChemtrailsCD_6721147567 a schema:Product ;
+    ex:primaryCategory ex:Entertaiment ;
+    ex:secondaryCategory ex:Music ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Lana Del Rey \"Chemtrails over the Country Club\" CD"^^xsd:string ;
+    schema:price "5.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_LattafaDukhan_7007038949 a schema:Product ;
+    ex:primaryCategory ex:Men ;
+    ex:secondaryCategory ex:Grooming ;
+    schema:brand ex:Lattafa ;
+    schema:color "Amber"^^xsd:string ;
+    schema:itemCondition "New with tags"^^xsd:string ;
+    schema:name "Lattafa Dukhan Perfume / Cologne"^^xsd:string ;
+    schema:price "5.0"^^xsd:float ;
+    schema:size "5ml"^^xsd:string .
+
+ex:item_LeopardPrintLingerieDress_7072400616 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Clothing ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "Beige, Black"^^xsd:string ;
+    schema:itemCondition "Good"^^xsd:string ;
+    schema:name "Leopard print lingerie dress"^^xsd:string ;
+    schema:price "7.0"^^xsd:float ;
+    schema:size "4"^^xsd:string .
+
+ex:item_LevisSize27_7061400391 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Clothing ;
+    schema:brand ex:Levis ;
+    schema:color "Light blue"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Levi’s size 27"^^xsd:string ;
+    schema:price "6.0"^^xsd:float ;
+    schema:size "10"^^xsd:string .
+
+ex:item_LionRecoveryCollar_6964764295 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Petcare ;
+    schema:brand ex:alphie ;
+    schema:color "Brown"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Lion recovery collar"^^xsd:string ;
+    schema:price "3.0"^^xsd:float ;
+    schema:size "L"^^xsd:string .
+
+ex:item_LululemonDualPouchWristletBlackGoldWordmark_7065918959 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Bags ;
+    schema:brand ex:Lululemon ;
+    schema:color "Black, Gold"^^xsd:string ;
+    schema:itemCondition "New with tags"^^xsd:string ;
+    schema:name "Lululemon Dual Pouch Wristlet Black and Gold Wordmark New With Tags"^^xsd:string ;
+    schema:price "20.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_LululemonTop_7058582204 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Clothing ;
+    schema:brand ex:Lululemon ;
+    schema:color "White"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Lululemon top"^^xsd:string ;
+    schema:price "10.0"^^xsd:float ;
+    schema:size "4"^^xsd:string .
+
+ex:item_MidwestSpreePetCarrier_7066098977 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Petcare ;
+    schema:brand ex:midwest ;
+    schema:color "Light blue, Gray"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Midwest Spree hard sided plastic extra vented pet carrier"^^xsd:string ;
+    schema:price "18.0"^^xsd:float ;
+    schema:size "S"^^xsd:string .
+
+ex:item_NF_Beanie_7065948958 a schema:Product ;
+    ex:primaryCategory ex:Men ;
+    ex:secondaryCategory ex:Accessories ;
+    schema:brand ex:TheNorthFace ;
+    schema:color "Navy"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Vintage North Face Navy Blue Men’s Beanie"^^xsd:string ;
+    schema:price "15.0"^^xsd:float ;
+    schema:size "One size"^^xsd:string .
+
+ex:item_NikeInfinityFlynitWomens_7051252291 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Shoes ;
+    schema:brand ex:Nike ;
+    schema:color "White"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Nike Infinity Flynit Women's"^^xsd:string ;
+    schema:price "20.0"^^xsd:float ;
+    schema:size "8"^^xsd:string .
+
+ex:item_PageMasterDVD_5785766723 a schema:Product ;
+    ex:primaryCategory ex:Entertaiment ;
+    ex:secondaryCategory ex:Video ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "The Page master dvd movie"^^xsd:string ;
+    schema:price "2.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_PapaRoachParamourSessionsCD_7072381990 a schema:Product ;
+    ex:primaryCategory ex:Entertaiment ;
+    ex:secondaryCategory ex:Music ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "Good"^^xsd:string ;
+    schema:name "Papa Roach : The Paramour Sessions CD (2006) Geffen Nu-Metal B0007496-02 Club Edition"^^xsd:string ;
+    schema:price "6.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_Prevention_7051278486 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Petcare ;
+    schema:brand ex:drloton ;
+    schema:color "White, Mint"^^xsd:string ;
+    schema:itemCondition "New with tags"^^xsd:string ;
+    schema:name "Prevention"^^xsd:string ;
+    schema:price "6.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_SambaAdidasLikeNew_7047990548 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Shoes ;
+    schema:brand ex:adidas ;
+    schema:color "Black"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Samba Adidas like new"^^xsd:string ;
+    schema:price "50.0"^^xsd:float ;
+    schema:size "7.5"^^xsd:string .
+
+ex:item_SantaClausIsComingDVD_7067387954 a schema:Product ;
+    ex:primaryCategory ex:Entertaiment ;
+    ex:secondaryCategory ex:Video ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "Good"^^xsd:string ;
+    schema:name "Santa Claus is coming to Town DVD"^^xsd:string ;
+    schema:price "3.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_SimpsonsCollectorEditionDVD_7072326366 a schema:Product ;
+    ex:primaryCategory ex:Entertaiment ;
+    ex:secondaryCategory ex:Video ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "The Simpsons DVD Collector’s Edition/ seasons 6 & 8"^^xsd:string ;
+    schema:price "18.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_SpoonTeabagPlate_6377063646 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Smallkitchenappliances ;
+    schema:brand ex:CostPlusWorldMarket ;
+    schema:color "Brown, Black"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Spoon/teabag plate"^^xsd:string ;
+    schema:price "3.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_SpringerSpaniel_5766048610 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Petcare ;
+    schema:brand ex:Douglas ;
+    schema:color "Brown"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Three year old springer spaniel"^^xsd:string ;
+    schema:price "15.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_Steamer_7070621775 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Smallkitchenappliances ;
+    schema:brand ex:Amazon ;
+    schema:color "White "^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Steamer"^^xsd:string ;
+    schema:price "10.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_StrawberryDish_7051854690 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Cookwarebakeware ;
+    schema:brand ex:Sheffield ;
+    schema:color "White"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Strawberry dish"^^xsd:string ;
+    schema:price "5.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_SwingingPetBed_7035200361 a schema:Product ;
+    ex:primaryCategory ex:Home ;
+    ex:secondaryCategory ex:Petcare ;
+    schema:brand ex:Amazon ;
+    schema:color "Mustard, Brown"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Swinging pet bed"^^xsd:string ;
+    schema:price "30.0"^^xsd:float ;
+    schema:size "L"^^xsd:string .
+
+ex:item_TF_OudWood_7065882664 a schema:Product ;
+    ex:primaryCategory ex:Men ;
+    ex:secondaryCategory ex:Grooming ;
+    schema:brand ex:TomFord ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "New with tags"^^xsd:string ;
+    schema:name "Tom Ford Oud Wood Eau de Parfum"^^xsd:string ;
+    schema:price "75.0"^^xsd:float ;
+    schema:size "100ml"^^xsd:string .
+
+ex:item_TaylorSwiftMidnightsMoonstoneBlue_6431064401 a schema:Product ;
+    ex:primaryCategory ex:Entertaiment ;
+    ex:secondaryCategory ex:Music ;
+    schema:brand ex:BrandUnknown ;
+    schema:color "not specified"^^xsd:string ;
+    schema:itemCondition "New without tags"^^xsd:string ;
+    schema:name "Midnights Taylor Swift moonstone blue ed"^^xsd:string ;
+    schema:price "12.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_VintageGuessShoulderBag_7059028695 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Bags ;
+    schema:brand ex:GUESS ;
+    schema:color "Purple"^^xsd:string ;
+    schema:itemCondition "Satisfactory"^^xsd:string ;
+    schema:name "vintage guess shoulder bag"^^xsd:string ;
+    schema:price "19.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_VintageKoltovBlackShoulderBag_7070486725 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Bags ;
+    schema:brand ex:koltov ;
+    schema:color "Black, Silver"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Vintage Koltov Black Shoulder Bag"^^xsd:string ;
+    schema:price "23.0"^^xsd:float ;
+    schema:size "not specified"^^xsd:string .
+
+ex:item_Zapatillas_7063942633 a schema:Product ;
+    ex:primaryCategory ex:Women ;
+    ex:secondaryCategory ex:Shoes ;
+    schema:brand ex:Skechers ;
+    schema:color "Black"^^xsd:string ;
+    schema:itemCondition "Very good"^^xsd:string ;
+    schema:name "Zapatillas"^^xsd:string ;
+    schema:price "20.0"^^xsd:float ;
+    schema:size "7"^^xsd:string .
+
+ex:primaryCategory a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range ex:Category ;
+    rdfs:subPropertyOf schema:category .
+
+ex:secondaryCategory a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range ex:Category ;
+    rdfs:subPropertyOf schema:category .
+
+schema:color a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range xsd:string .
+
+schema:itemCondition a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range xsd:string .
+
+schema:name a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range xsd:string .
+
+schema:size a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range xsd:string .
+
+ex:AbercrombieFitch a schema:Brand ;
+    schema:name "Abercrombie & Fitch"^^xsd:string .
+
+ex:Chogan a schema:Brand ;
+    schema:name "Chogan"^^xsd:string .
+
+ex:Coach a schema:Brand ;
+    schema:name "Coach"^^xsd:string .
+
+ex:Converse a schema:Brand ;
+    schema:name "Converse"^^xsd:string .
+
+ex:Corningware a schema:Brand ;
+    schema:name "Corningware"^^xsd:string .
+
+ex:CostPlusWorldMarket a schema:Brand ;
+    schema:name "Cost Plus World Market"^^xsd:string .
+
+ex:CrockPot a schema:Brand ;
+    schema:name "Crock Pot"^^xsd:string .
+
+ex:Dior a schema:Brand ;
+    schema:name "Dior"^^xsd:string .
+
+ex:Dolly a schema:Brand ;
+    schema:name "Dolly"^^xsd:string .
+
+ex:Douglas a schema:Brand ;
+    schema:name "Douglas"^^xsd:string .
+
+ex:EdHardy a schema:Brand ;
+    schema:name "Ed Hardy"^^xsd:string .
+
+ex:Empyre a schema:Brand ;
+    schema:name "Empyre"^^xsd:string .
+
+ex:Espresso a schema:Brand ;
+    schema:name "Espresso"^^xsd:string .
+
+ex:GUESS a schema:Brand ;
+    schema:name "GUESS"^^xsd:string .
+
+ex:GuyClarac a schema:Brand ;
+    schema:name "Guy Clarac"^^xsd:string .
+
+ex:Ideal a schema:Brand ;
+    schema:name "Ideal"^^xsd:string .
+
+ex:Jack a schema:Brand ;
+    schema:name "Jack"^^xsd:string .
+
+ex:Lattafa a schema:Brand ;
+    schema:name "Lattafa"^^xsd:string .
+
+ex:Levis a schema:Brand ;
+    schema:name "Levi's"^^xsd:string .
+
+ex:NOLABEL a schema:Brand ;
+    schema:name "NO LABEL"^^xsd:string .
+
+ex:Nike a schema:Brand ;
+    schema:name "Nike"^^xsd:string .
+
+ex:Sheffield a schema:Brand ;
+    schema:name "Sheffield"^^xsd:string .
+
+ex:Skechers a schema:Brand ;
+    schema:name "Skechers"^^xsd:string .
+
+ex:TheNorthFace a schema:Brand ;
+    schema:name "The North Face"^^xsd:string .
+
+ex:TomFord a schema:Brand ;
+    schema:name "Tom Ford"^^xsd:string .
+
+ex:UniqueVintage a schema:Brand ;
+    schema:name "Unique Vintage"^^xsd:string .
+
+ex:adidas a schema:Brand ;
+    schema:name "adidas"^^xsd:string .
+
+ex:alphie a schema:Brand ;
+    schema:name "alphie"^^xsd:string .
+
+ex:drloton a schema:Brand ;
+    schema:name "drloton"^^xsd:string .
+
+ex:ibex a schema:Brand ;
+    schema:name "ibex"^^xsd:string .
+
+ex:koltov a schema:Brand ;
+    schema:name "koltov"^^xsd:string .
+
+ex:midwest a schema:Brand ;
+    schema:name "midwest"^^xsd:string .
+
+schema:brand a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range schema:Brand .
+
+ex:Amazon a schema:Brand ;
+    schema:name "Amazon"^^xsd:string .
+
+ex:Lululemon a schema:Brand ;
+    schema:name "Lululemon"^^xsd:string .
+
+schema:category a rdf:Property ;
+    rdfs:domain schema:Product ;
+    rdfs:range ex:Category .
+
+ex:BrandUnknown a schema:Brand ;
+    schema:name "BrandUnknown"^^xsd:string .
+
