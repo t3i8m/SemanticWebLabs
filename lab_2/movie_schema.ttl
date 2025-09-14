@@ -1,0 +1,62 @@
+@prefix movies: <http://example.org/movies/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+movies:Actor a rdfs:Class ;
+    rdfs:subClassOf movies:Person .
+
+movies:Director a rdfs:Class ;
+    rdfs:subClassOf movies:Person .
+
+movies:Movie a rdfs:Class ;
+    rdfs:subClassOf sdo:Movie .
+
+movies:Person a rdfs:Class ;
+    rdfs:subClassOf sdo:Person .
+
+movies:hasActor a owl:ObjectProperty ;
+    rdfs:domain movies:Movie ;
+    rdfs:range movies:Actor ;
+    rdfs:subPropertyOf sdo:actor .
+
+movies:hasDirector a owl:ObjectProperty ;
+    rdfs:domain movies:Movie ;
+    rdfs:range movies:Director ;
+    rdfs:subPropertyOf sdo:director .
+
+movies:hasGenre a owl:DatatypeProperty ;
+    rdfs:domain movies:Movie ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf sdo:genre .
+
+movies:hasGrossRevenue a owl:DatatypeProperty ;
+    rdfs:domain movies:Movie ;
+    rdfs:range xsd:integer .
+
+movies:hasImdbRating a owl:DatatypeProperty ;
+    rdfs:domain movies:Movie ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf sdo:ratingValue .
+
+movies:hasName a owl:DatatypeProperty ;
+    rdfs:domain movies:Person ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf sdo:name .
+
+movies:hasRuntime a owl:DatatypeProperty ;
+    rdfs:domain movies:Movie ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf sdo:duration .
+
+movies:hasTitle a owl:DatatypeProperty ;
+    rdfs:domain movies:Movie ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf sdo:name .
+
+movies:releasedInYear a owl:DatatypeProperty ;
+    rdfs:domain movies:Movie ;
+    rdfs:range xsd:gYear ;
+    rdfs:subPropertyOf sdo:datePublished .
+
