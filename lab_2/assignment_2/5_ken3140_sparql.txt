@@ -206,14 +206,47 @@ Website: https://adidas-group.com
 
 Query F: 
 
+PREFIX ex: <http://semanticweb2025.group5/vinted/>
+PREFIX schema: <https://schema.org/>
 
--- INSERT SPARQL FORMULATION OF YOUR QUERY--
+SELECT ?seed ?candidate ?candidateName ?shared ?candidatePrice
+WHERE {
+  VALUES ?seed { ex:item_AbercrombieFitchCroppedSweaterJuniorsOrWomensSizeXSFall_7057532907 }
+
+  ?seed schema:brand ?seedBrand ;
+        ex:secondaryCategory ?seedSubcat ;
+        schema:price ?seedPrice .
+
+  ?candidate a schema:Product ;
+             schema:name ?candidateName ;
+             schema:price ?candidatePrice .
+
+  FILTER(?candidate != ?seed)
+
+  {
+    ?candidate schema:brand ?seedBrand .
+    BIND("brand" AS ?shared)
+  }
+  UNION
+  {
+    ?candidate ex:secondaryCategory ?seedSubcat .
+    BIND("subcategory" AS ?shared)
+  }
+
+  FILTER(?candidatePrice >= ?seedPrice * 0.8 && ?candidatePrice <= ?seedPrice * 1.2)
+}
+ORDER BY ?shared (ABS(?candidatePrice - ?seedPrice))
+LIMIT 5
 
 
 Results:
 
+Original Item: http://semanticweb2025.group5/vinted/item_AbercrombieFitchCroppedSweaterJuniorsOrWomensSizeXSFall_7057532907
+Candidate`s URI: http://semanticweb2025.group5/vinted/item_LevisSize27_7061400391
+Name: Levi’s size 27
+Common feature: subcategory
+Price: 6.0 €
 
-------
 ------------
 
 Query G: 

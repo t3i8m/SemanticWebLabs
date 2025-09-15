@@ -71,7 +71,8 @@ ex:item_AbercrombieFitchCroppedSweaterJuniorsOrWomensSizeXSFall_7057532907 a sch
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Abercrombie & Fitch Cropped Sweater Juniors Or Women’s Size XS Fall"^^xsd:string ;
     schema:price 5.0 ;
-    schema:size "4"^^xsd:string .
+    schema:size "4"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7057532907-abercrombie-fitch-cropped-sweater-juniors-or-womens-size-xs-fall?referrer=catalog> .
 
 ex:item_BillieEilishHitMeHardAndSoft_6915157257 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -81,7 +82,8 @@ ex:item_BillieEilishHitMeHardAndSoft_6915157257 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Hit me hard and soft album record"^^xsd:string ;
     schema:price 11.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/6915157257-hit-me-hard-and-soft-album-record?referrer=catalog> .
 
 ex:item_BlackAndWhiteConverseShoes_7072439359 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -91,7 +93,8 @@ ex:item_BlackAndWhiteConverseShoes_7072439359 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "black and white Converse shoes"^^xsd:string ;
     schema:price 16.0 ;
-    schema:size "8"^^xsd:string .
+    schema:size "8"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7072439359-black-and-white-converse-shoes?referrer=catalog> .
 
 ex:item_BlackRelaxEmpyreSkaterBlack_7071973949 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -101,7 +104,8 @@ ex:item_BlackRelaxEmpyreSkaterBlack_7071973949 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Black Relax Empyre Skater Black"^^xsd:string ;
     schema:price 13.0 ;
-    schema:size "4"^^xsd:string .
+    schema:size "4"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7071973949-black-relax-empyre-skater-black?referrer=catalog> .
 
 ex:item_ButterflyEffectCollectionDVD_2653528041 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -111,7 +115,8 @@ ex:item_ButterflyEffectCollectionDVD_2653528041 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "The Butterfly Effect Collection DVD"^^xsd:string ;
     schema:price 1.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/2653528041-the-butterfly-effect-collection-dvd?referrer=catalog> .
 
 ex:item_CasseroleSetOf4_6733481436 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -121,7 +126,8 @@ ex:item_CasseroleSetOf4_6733481436 a schema:Product ;
     schema:itemCondition "New with tags"^^xsd:string ;
     schema:name "casserole set of 4"^^xsd:string ;
     schema:price 20.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/6733481436-casserole-set-of-4?referrer=catalog> .
 
 ex:item_Chogan118_3162020098 a schema:Product ;
     ex:primaryCategory ex:Men ;
@@ -131,7 +137,8 @@ ex:item_Chogan118_3162020098 a schema:Product ;
     schema:itemCondition "New with tags"^^xsd:string ;
     schema:name "Chogan Parfüm Nr.118"^^xsd:string ;
     schema:price 45.0 ;
-    schema:size "50ml"^^xsd:string .
+    schema:size "50ml"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/3162020098-chogan-parfum-nr118-50ml> .
 
 ex:item_CoachSignaturePurse_7051847400 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -141,7 +148,8 @@ ex:item_CoachSignaturePurse_7051847400 a schema:Product ;
     schema:itemCondition "Very good "^^xsd:string ;
     schema:name "Coach signature Purse"^^xsd:string ;
     schema:price 55.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7051847400-coach-signature-purse?referrer=catalog> .
 
 ex:item_CoffeeShopClearanceEspressoMachine_7044963349 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -151,7 +159,8 @@ ex:item_CoffeeShopClearanceEspressoMachine_7044963349 a schema:Product ;
     schema:itemCondition "Very Good "^^xsd:string ;
     schema:name "Coffee shop clearance: Espresso machine - great deal"^^xsd:string ;
     schema:price 55.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7044963349-coffee-shop-clearance-espresso-machine-great-deal?referrer=catalog> .
 
 ex:item_Corningware_7059123811 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -161,7 +170,8 @@ ex:item_Corningware_7059123811 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Corningware"^^xsd:string ;
     schema:price 12.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7059123811-corningware?referrer=catalog> .
 
 ex:item_CrockPotSmall_7008639345 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -171,7 +181,8 @@ ex:item_CrockPotSmall_7008639345 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Crock pot small"^^xsd:string ;
     schema:price 10.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7008639345-crock-pot-small?referrer=catalog> .
 
 ex:item_CrockPot_7016875144 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -181,7 +192,8 @@ ex:item_CrockPot_7016875144 a schema:Product ;
     schema:itemCondition "Good "^^xsd:string ;
     schema:name "Crock pot"^^xsd:string ;
     schema:price 5.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7016875144-crock-pot?referrer=catalog> .
 
 ex:item_CuteVintagePolkaDotTote_7028968164 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -191,7 +203,8 @@ ex:item_CuteVintagePolkaDotTote_7028968164 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Cute Vintage Polka Dot Tote, Folds Up Small To Put in a Purse/Luggage, Viola' another Tote!"^^xsd:string ;
     schema:price 7.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7028968164-cute-vintage-polka-dot-tote-folds-up-small-to-put-in-a-purseluggage-viola-another-tote?referrer=catalog> .
 
 ex:item_DiorHomme_4241982335 a schema:Product ;
     ex:primaryCategory ex:Men ;
@@ -201,7 +214,8 @@ ex:item_DiorHomme_4241982335 a schema:Product ;
     schema:itemCondition "New with tags"^^xsd:string ;
     schema:name "Dior Homme After Shave"^^xsd:string ;
     schema:price 40.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/4241982335-dior-homme-after-shave?referrer=catalog> .
 
 ex:item_EagleBelt_7065905467 a schema:Product ;
     ex:primaryCategory ex:Men ;
@@ -211,7 +225,8 @@ ex:item_EagleBelt_7065905467 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Eagle Leather Belt"^^xsd:string ;
     schema:price 10.0 ;
-    schema:size "32 in"^^xsd:string .
+    schema:size "32 in"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7065905467-eagle-leather-belt> .
 
 ex:item_EdHardyBelt_7010159956 a schema:Product ;
     ex:primaryCategory ex:Men ;
@@ -221,7 +236,8 @@ ex:item_EdHardyBelt_7010159956 a schema:Product ;
     schema:itemCondition "New with tags"^^xsd:string ;
     schema:name "Ed Hardy Panther Print Red Belt With Rivet Studs"^^xsd:string ;
     schema:price 20.0 ;
-    schema:size "Adjustable"^^xsd:string .
+    schema:size "Adjustable"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7010159956-ed-hardy-mens-panther-print-red-belt-with-rivet-studs> .
 
 ex:item_EnhypenRomanceUntoldAlbum_6871106441 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -231,7 +247,8 @@ ex:item_EnhypenRomanceUntoldAlbum_6871106441 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Enhypen Romance: Untold Engene Ver Album"^^xsd:string ;
     schema:price 5.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/6871106441-enhypen-romance-untold-engene-ver-album?referrer=catalog> .
 
 ex:item_GuyClarac_2259238450 a schema:Product ;
     ex:primaryCategory ex:Men ;
@@ -241,7 +258,8 @@ ex:item_GuyClarac_2259238450 a schema:Product ;
     schema:itemCondition "Good"^^xsd:string ;
     schema:name "Montre homme Guy Clarac"^^xsd:string ;
     schema:price 15.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/2259238450-montre-homme-guy-clarac> .
 
 ex:item_HocusPocusCookieCutters_6964566662 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -251,7 +269,8 @@ ex:item_HocusPocusCookieCutters_6964566662 a schema:Product ;
     schema:itemCondition "New with tags"^^xsd:string ;
     schema:name "Hocus pocus cookie cutters"^^xsd:string ;
     schema:price 3.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/6964566662-hocus-pocus-cookie-cutters?referrer=catalog> .
 
 ex:item_ISpyThingThatFlingsDVD_7061364696 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -261,7 +280,8 @@ ex:item_ISpyThingThatFlingsDVD_7061364696 a schema:Product ;
     schema:itemCondition "Good"^^xsd:string ;
     schema:name "I Spy a thing that flings and other stories DVD"^^xsd:string ;
     schema:price 5.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7061364696-i-spy-a-thing-that-flings-and-other-stories-dvd?referrer=catalog> .
 
 ex:item_IbexBelt_7044814371 a schema:Product ;
     ex:primaryCategory ex:Men ;
@@ -271,7 +291,8 @@ ex:item_IbexBelt_7044814371 a schema:Product ;
     schema:itemCondition "Good"^^xsd:string ;
     schema:name "Vintage Ibex Brown Leather Belt Men’s 46"^^xsd:string ;
     schema:price 40.0 ;
-    schema:size "45 in"^^xsd:string .
+    schema:size "45 in"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7044814371-vintage-ibex-brown-leather-belt-mens-46-gold-enamel-striped-buckle-preppy-twee> .
 
 ex:item_JackSkellington_7072326409 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -281,7 +302,8 @@ ex:item_JackSkellington_7072326409 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Jack skellington"^^xsd:string ;
     schema:price 14.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7072326409-jack-skellington?referrer=catalog> .
 
 ex:item_JustKids_7075705549 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -291,7 +313,8 @@ ex:item_JustKids_7075705549 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Just Kids by Patti Smith"^^xsd:string ;
     schema:price 3.0 ;
-    schema:size "9.78E+12"^^xsd:string .
+    schema:size "9.78E+12"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7075705549-just-kids-by-patti-smith?referrer=catalog> .
 
 ex:item_KhakiBoots_7029761685 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -301,7 +324,8 @@ ex:item_KhakiBoots_7029761685 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "khaki green knee high boots punk with buckle detail"^^xsd:string ;
     schema:price 20.0 ;
-    schema:size "7"^^xsd:string .
+    schema:size "7"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7029761685-khaki-green-knee-high-boots-punk-with-buckle-detail?referrer=catalog> .
 
 ex:item_LanaDelReyChemtrailsCD_6721147567 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -311,7 +335,8 @@ ex:item_LanaDelReyChemtrailsCD_6721147567 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Lana Del Rey \"Chemtrails over the Country Club\" CD"^^xsd:string ;
     schema:price 5.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/6721147567-lana-del-rey-chemtrails-over-the-country-club-cd?referrer=catalog> .
 
 ex:item_LattafaDukhan_7007038949 a schema:Product ;
     ex:primaryCategory ex:Men ;
@@ -321,7 +346,8 @@ ex:item_LattafaDukhan_7007038949 a schema:Product ;
     schema:itemCondition "New with tags"^^xsd:string ;
     schema:name "Lattafa Dukhan Perfume / Cologne"^^xsd:string ;
     schema:price 5.0 ;
-    schema:size "5ml"^^xsd:string .
+    schema:size "5ml"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7007038949-lattafa-dukhan-perfume-cologne?referrer=catalog> .
 
 ex:item_LeopardPrintLingerieDress_7072400616 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -331,7 +357,8 @@ ex:item_LeopardPrintLingerieDress_7072400616 a schema:Product ;
     schema:itemCondition "Good"^^xsd:string ;
     schema:name "Leopard print lingerie dress"^^xsd:string ;
     schema:price 7.0 ;
-    schema:size "4"^^xsd:string .
+    schema:size "4"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7072400616-leopard-print-lingerie-dress?referrer=catalog> .
 
 ex:item_LevisSize27_7061400391 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -341,7 +368,8 @@ ex:item_LevisSize27_7061400391 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Levi’s size 27"^^xsd:string ;
     schema:price 6.0 ;
-    schema:size "10"^^xsd:string .
+    schema:size "10"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7061400391-levis-size-27?referrer=catalog> .
 
 ex:item_LionRecoveryCollar_6964764295 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -351,7 +379,8 @@ ex:item_LionRecoveryCollar_6964764295 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Lion recovery collar"^^xsd:string ;
     schema:price 3.0 ;
-    schema:size "L"^^xsd:string .
+    schema:size "L"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/6964764295-lion-recovery-collar?referrer=catalog> .
 
 ex:item_LululemonDualPouchWristletBlackGoldWordmark_7065918959 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -361,7 +390,8 @@ ex:item_LululemonDualPouchWristletBlackGoldWordmark_7065918959 a schema:Product 
     schema:itemCondition "New with tags"^^xsd:string ;
     schema:name "Lululemon Dual Pouch Wristlet Black and Gold Wordmark New With Tags"^^xsd:string ;
     schema:price 20.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7065918959-lululemon-dual-pouch-wristlet-black-and-gold-wordmark-new-with-tags?referrer=catalog> .
 
 ex:item_LululemonTop_7058582204 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -371,7 +401,8 @@ ex:item_LululemonTop_7058582204 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Lululemon top"^^xsd:string ;
     schema:price 10.0 ;
-    schema:size "4"^^xsd:string .
+    schema:size "4"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7058582204-lululemon-top?referrer=catalog> .
 
 ex:item_MidwestSpreePetCarrier_7066098977 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -381,7 +412,8 @@ ex:item_MidwestSpreePetCarrier_7066098977 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Midwest Spree hard sided plastic extra vented pet carrier"^^xsd:string ;
     schema:price 18.0 ;
-    schema:size "S"^^xsd:string .
+    schema:size "S"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7066098977-midwest-spree-hard-sided-plastic-extra-vented-pet-carrier?referrer=catalog> .
 
 ex:item_NF_Beanie_7065948958 a schema:Product ;
     ex:primaryCategory ex:Men ;
@@ -391,7 +423,8 @@ ex:item_NF_Beanie_7065948958 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Vintage North Face Navy Blue Men’s Beanie"^^xsd:string ;
     schema:price 15.0 ;
-    schema:size "One size"^^xsd:string .
+    schema:size "One size"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7065948958-vintage-north-face-navy-blue-mens-beanie> .
 
 ex:item_NikeInfinityFlynitWomens_7051252291 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -401,7 +434,8 @@ ex:item_NikeInfinityFlynitWomens_7051252291 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Nike Infinity Flynit Women's"^^xsd:string ;
     schema:price 20.0 ;
-    schema:size "8"^^xsd:string .
+    schema:size "8"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7051252291-nike-infinity-flynit-womens?referrer=catalog> .
 
 ex:item_PageMasterDVD_5785766723 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -411,7 +445,8 @@ ex:item_PageMasterDVD_5785766723 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "The Page master dvd movie"^^xsd:string ;
     schema:price 2.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/5785766723-the-page-master-dvd-movie?referrer=catalog> .
 
 ex:item_PapaRoachParamourSessionsCD_7072381990 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -421,7 +456,8 @@ ex:item_PapaRoachParamourSessionsCD_7072381990 a schema:Product ;
     schema:itemCondition "Good"^^xsd:string ;
     schema:name "Papa Roach : The Paramour Sessions CD (2006) Geffen Nu-Metal B0007496-02 Club Edition"^^xsd:string ;
     schema:price 6.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7072381990-papa-roach-the-paramour-sessions-cd-2006-geffen-nu-metal-b0007496-02-club-edition?referrer=catalog> .
 
 ex:item_Prevention_7051278486 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -431,7 +467,8 @@ ex:item_Prevention_7051278486 a schema:Product ;
     schema:itemCondition "New with tags"^^xsd:string ;
     schema:name "Prevention"^^xsd:string ;
     schema:price 6.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7051278486-prevention?referrer=catalog> .
 
 ex:item_SambaAdidasLikeNew_7047990548 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -441,7 +478,8 @@ ex:item_SambaAdidasLikeNew_7047990548 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Samba Adidas like new"^^xsd:string ;
     schema:price 50.0 ;
-    schema:size "7.5"^^xsd:string .
+    schema:size "7.5"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7047990548-samba-adidas-like-new?referrer=catalog> .
 
 ex:item_SantaClausIsComingDVD_7067387954 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -451,7 +489,8 @@ ex:item_SantaClausIsComingDVD_7067387954 a schema:Product ;
     schema:itemCondition "Good"^^xsd:string ;
     schema:name "Santa Claus is coming to Town DVD"^^xsd:string ;
     schema:price 3.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7067387954-santa-claus-is-coming-to-town-dvd?referrer=catalog> .
 
 ex:item_SimpsonsCollectorEditionDVD_7072326366 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -461,7 +500,8 @@ ex:item_SimpsonsCollectorEditionDVD_7072326366 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "The Simpsons DVD Collector’s Edition/ seasons 6 & 8"^^xsd:string ;
     schema:price 18.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7072326366-the-simpsons-dvd-collectors-edition-seasons-6-8?referrer=catalog> .
 
 ex:item_SpoonTeabagPlate_6377063646 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -471,7 +511,8 @@ ex:item_SpoonTeabagPlate_6377063646 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Spoon/teabag plate"^^xsd:string ;
     schema:price 3.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/6377063646-spoonteabag-plate?referrer=catalog> .
 
 ex:item_SpringerSpaniel_5766048610 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -481,7 +522,8 @@ ex:item_SpringerSpaniel_5766048610 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Three year old springer spaniel"^^xsd:string ;
     schema:price 15.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/5766048610-three-year-old-springer-spaniel?referrer=catalog> .
 
 ex:item_Steamer_7070621775 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -491,7 +533,8 @@ ex:item_Steamer_7070621775 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Steamer"^^xsd:string ;
     schema:price 10.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7070621775-steamer?referrer=catalog> .
 
 ex:item_StrawberryDish_7051854690 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -501,7 +544,8 @@ ex:item_StrawberryDish_7051854690 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Strawberry dish"^^xsd:string ;
     schema:price 5.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7051854690-strawberry-dish?referrer=catalog> .
 
 ex:item_SwingingPetBed_7035200361 a schema:Product ;
     ex:primaryCategory ex:Home ;
@@ -511,7 +555,8 @@ ex:item_SwingingPetBed_7035200361 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Swinging pet bed"^^xsd:string ;
     schema:price 30.0 ;
-    schema:size "L"^^xsd:string .
+    schema:size "L"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7035200361-swinging-pet-bed?referrer=catalog> .
 
 ex:item_TF_OudWood_7065882664 a schema:Product ;
     ex:primaryCategory ex:Men ;
@@ -521,7 +566,8 @@ ex:item_TF_OudWood_7065882664 a schema:Product ;
     schema:itemCondition "New with tags"^^xsd:string ;
     schema:name "Tom Ford Oud Wood Eau de Parfum"^^xsd:string ;
     schema:price 75.0 ;
-    schema:size "100ml"^^xsd:string .
+    schema:size "100ml"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7065882664-tom-ford-oud-wood-eau-de-parfum?referrer=catalog> .
 
 ex:item_TaylorSwiftMidnightsMoonstoneBlue_6431064401 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
@@ -531,7 +577,8 @@ ex:item_TaylorSwiftMidnightsMoonstoneBlue_6431064401 a schema:Product ;
     schema:itemCondition "New without tags"^^xsd:string ;
     schema:name "Midnights Taylor Swift moonstone blue ed"^^xsd:string ;
     schema:price 12.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/6431064401-midnights-taylor-swift-moonstone-blue-ed?referrer=catalog> .
 
 ex:item_VintageGuessShoulderBag_7059028695 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -541,7 +588,8 @@ ex:item_VintageGuessShoulderBag_7059028695 a schema:Product ;
     schema:itemCondition "Satisfactory"^^xsd:string ;
     schema:name "vintage guess shoulder bag"^^xsd:string ;
     schema:price 19.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7059028695-vintage-guess-shoulder-bag?referrer=catalog> .
 
 ex:item_VintageKoltovBlackShoulderBag_7070486725 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -551,7 +599,8 @@ ex:item_VintageKoltovBlackShoulderBag_7070486725 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Vintage Koltov Black Shoulder Bag"^^xsd:string ;
     schema:price 23.0 ;
-    schema:size "not specified"^^xsd:string .
+    schema:size "not specified"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7070486725-vintage-koltov-black-shoulder-bag?referrer=catalog> .
 
 ex:item_Zapatillas_7063942633 a schema:Product ;
     ex:primaryCategory ex:Women ;
@@ -561,7 +610,8 @@ ex:item_Zapatillas_7063942633 a schema:Product ;
     schema:itemCondition "Very good"^^xsd:string ;
     schema:name "Zapatillas"^^xsd:string ;
     schema:price 20.0 ;
-    schema:size "7"^^xsd:string .
+    schema:size "7"^^xsd:string ;
+    schema:url <https://www.vinted.com/items/7063942633-zapatillas?referrer=catalog> .
 
 ex:primaryCategory a rdf:Property ;
     rdfs:domain schema:Product ;
