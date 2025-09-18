@@ -272,6 +272,8 @@ ex:item_HocusPocusCookieCutters_6964566662 a schema:Product ;
     schema:size "not specified"^^xsd:string ;
     schema:url <https://www.vinted.com/items/6964566662-hocus-pocus-cookie-cutters?referrer=catalog> .
 
+    
+
 ex:item_ISpyThingThatFlingsDVD_7061364696 a schema:Product ;
     ex:primaryCategory ex:Entertaiment ;
     ex:secondaryCategory ex:Video ;
