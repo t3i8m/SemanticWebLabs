@@ -1,0 +1,234 @@
+@prefix : <http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/> .
+
+<http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#hasAncestor
+:hasAncestor rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasRelation ;
+             owl:inverseOf :hasDescendant ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:domain :Person ;
+             rdfs:range :Person .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#hasDescendant
+:hasDescendant rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#hasGender
+:hasGender rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Person ;
+           rdfs:range :Gender .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#hasGrandFather
+:hasGrandFather rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasGrandParent ;
+                rdfs:range :Man .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#hasGrandMother
+:hasGrandMother rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasGrandParent ;
+                rdfs:range :Woman .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#hasGrandParent
+:hasGrandParent rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasAncestor ;
+                owl:inverseOf :isGrandParentOf ;
+                rdfs:domain :Person ;
+                rdfs:range :Person ;
+                owl:propertyChainAxiom ( :hasParent
+                                         :hasParent
+                                       ) .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#hasRelation
+:hasRelation rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#isGrandParentOf
+:isGrandParentOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/hasChild
+:hasChild rdf:type owl:ObjectProperty ;
+          owl:inverseOf :hasParent .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/hasFather
+:hasFather rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParent ;
+           owl:inverseOf :isFatherOf ;
+           rdfs:domain :Person ;
+           rdfs:range :Man .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/hasMother
+:hasMother rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParent ;
+           owl:inverseOf :isMotherOf ;
+           rdfs:domain :Person ;
+           rdfs:range :Woman .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/hasParent
+:hasParent rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasAncestor ;
+           rdfs:domain :Person ;
+           rdfs:range :Person .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/isFatherOf
+:isFatherOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/isMotherOf
+:isMotherOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Female
+:Female rdf:type owl:Class ;
+        rdfs:subClassOf :Gender ;
+        owl:disjointWith :Male .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Gender
+:Gender rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:unionOf ( :Female
+                                            :Male
+                                          )
+                            ] ;
+        owl:disjointWith :Person .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Male
+:Male rdf:type owl:Class ;
+      rdfs:subClassOf :Gender .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Man
+:Man rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasGender ;
+                                                  owl:someValuesFrom :Male
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+     rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGender ;
+                          owl:someValuesFrom :Gender
+                        ] .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Woman
+:Woman rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasGender ;
+                                                    owl:someValuesFrom :Female
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+       rdfs:subClassOf :Person .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Anne_Princess_Royal
+:Anne_Princess_Royal rdf:type owl:NamedIndividual ;
+                     :hasFather :Prince_Philip_Duke_of_Edinburgh ;
+                     :hasMother :Queen_Elizabeth_II .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Catherine_Princess_of_Wales
+:Catherine_Princess_of_Wales rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Charles_III
+:Charles_III rdf:type owl:NamedIndividual ;
+             :hasFather :Prince_Philip_Duke_of_Edinburgh ;
+             :hasMother :Queen_Elizabeth_II .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Diana_Princess_of_Wales
+:Diana_Princess_of_Wales rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#King_George_VI
+:King_George_VI rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Prince_George_of_Wales
+:Prince_George_of_Wales rdf:type owl:NamedIndividual ;
+                        :hasFather :William_Prince_of_Wales ;
+                        :hasMother :Catherine_Princess_of_Wales .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Prince_Harry_Duke_of_Sussex
+:Prince_Harry_Duke_of_Sussex rdf:type owl:NamedIndividual ;
+                             :hasFather :Charles_III ;
+                             :hasMother :Diana_Princess_of_Wales .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Prince_Philip_Duke_of_Edinburgh
+:Prince_Philip_Duke_of_Edinburgh rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Princess_Charlotte_of_Wales
+:Princess_Charlotte_of_Wales rdf:type owl:NamedIndividual ;
+                             :hasFather :William_Prince_of_Wales ;
+                             :hasMother :Catherine_Princess_of_Wales .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Princess_Margaret_Countess_of_Snowdon
+:Princess_Margaret_Countess_of_Snowdon rdf:type owl:NamedIndividual ;
+                                       :hasFather :King_George_VI ;
+                                       :hasMother :Queen_Elizabeth_The_Queen_Mother .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Queen_Elizabeth_II
+:Queen_Elizabeth_II rdf:type owl:NamedIndividual ;
+                    :hasFather :King_George_VI ;
+                    :hasMother :Queen_Elizabeth_The_Queen_Mother .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Queen_Elizabeth_The_Queen_Mother
+:Queen_Elizabeth_The_Queen_Mother rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#William_Prince_of_Wales
+:William_Prince_of_Wales rdf:type owl:NamedIndividual ;
+                         :hasFather :Charles_III ;
+                         :hasMother :Diana_Princess_of_Wales .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
