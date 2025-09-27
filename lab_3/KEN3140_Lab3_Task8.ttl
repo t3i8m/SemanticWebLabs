@@ -75,6 +75,8 @@
 :isGrandParentOf rdf:type owl:ObjectProperty .
 
 
+
+
 ###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/hasChild
 :hasChild rdf:type owl:ObjectProperty ;
           owl:inverseOf :hasParent .
