@@ -69,6 +69,8 @@
                       owl:SymmetricProperty .
 
 
+
+
 ###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#isGrandParentOf
 :isGrandParentOf rdf:type owl:ObjectProperty .
 
