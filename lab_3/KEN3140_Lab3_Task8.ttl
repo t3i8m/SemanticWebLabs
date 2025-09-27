@@ -62,6 +62,8 @@
                                        ) .
 
 
+
+
 ###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#hasRelation
 :hasRelation rdf:type owl:ObjectProperty ,
                       owl:SymmetricProperty .
