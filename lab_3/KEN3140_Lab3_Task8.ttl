@@ -92,6 +92,8 @@
            rdfs:range :Man .
 
 
+
+
 ###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/hasMother
 :hasMother rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :hasParent ;
