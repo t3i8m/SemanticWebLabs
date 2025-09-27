@@ -82,6 +82,8 @@
           owl:inverseOf :hasParent .
 
 
+
+
 ###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/hasFather
 :hasFather rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :hasParent ;
