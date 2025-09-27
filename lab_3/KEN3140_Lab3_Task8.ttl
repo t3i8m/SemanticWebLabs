@@ -102,6 +102,8 @@
            rdfs:range :Woman .
 
 
+
+
 ###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab/hasParent
 :hasParent rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :hasAncestor ;
