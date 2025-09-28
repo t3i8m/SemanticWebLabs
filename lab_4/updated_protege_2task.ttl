@@ -1,0 +1,1464 @@
+@prefix ex: <http://semanticweb2025.group5/vinted/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://schema.org/price
+schema:price rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/url
+schema:url rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://semanticweb2025.group5/vinted/collaborationBrand
+ex:collaborationBrand rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf schema:brand ;
+                      rdfs:domain schema:Product ;
+                      rdfs:range schema:Brand .
+
+
+###  http://semanticweb2025.group5/vinted/primaryCategory
+ex:primaryCategory rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf schema:category ;
+                   rdfs:domain schema:Product ;
+                   rdfs:range ex:Category .
+
+
+###  http://semanticweb2025.group5/vinted/secondaryCategory
+ex:secondaryCategory rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf schema:category ;
+                     rdfs:domain schema:Product ;
+                     rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasSubcategory
+<http://www.co-ode.org/ontologies/ont.owl#hasSubcategory> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain ex:Category ;
+                                                          rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#isBrandOf
+<http://www.co-ode.org/ontologies/ont.owl#isBrandOf> rdf:type owl:ObjectProperty ;
+                                                     owl:inverseOf schema:brand ;
+                                                     rdfs:domain schema:Brand .
+
+
+###  https://schema.org/brand
+schema:brand rdf:type owl:ObjectProperty ;
+             rdfs:domain schema:Product ;
+             rdfs:range schema:Brand .
+
+
+###  https://schema.org/category
+schema:category rdf:type owl:ObjectProperty ;
+                rdfs:domain schema:Product ;
+                rdfs:range ex:Category .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://schema.org/color
+schema:color rdf:type owl:DatatypeProperty ;
+             rdfs:domain schema:Product ;
+             rdfs:range xsd:string .
+
+
+###  https://schema.org/itemCondition
+schema:itemCondition rdf:type owl:DatatypeProperty ;
+                     rdfs:domain schema:Product ;
+                     rdfs:range xsd:string .
+
+
+###  https://schema.org/name
+schema:name rdf:type owl:DatatypeProperty ;
+            rdfs:domain schema:Product ;
+            rdfs:range xsd:string .
+
+
+###  https://schema.org/size
+schema:size rdf:type owl:DatatypeProperty ;
+            rdfs:domain schema:Product ;
+            rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://semanticweb2025.group5/vinted/Accessories
+ex:Accessories rdf:type owl:Class ;
+               owl:equivalentClass _:genid2 ;
+               rdfs:subClassOf ex:Men ,
+                               <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+_:genid2 owl:intersectionOf ( schema:Product
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ex:primaryCategory ;
+                                 owl:hasValue ex:Men
+                               ]
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ex:secondaryCategory ;
+                                 owl:hasValue ex:Accessories
+                               ]
+                             ) ;
+          rdf:type owl:Class .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:Accessories ;
+   owl:annotatedProperty owl:equivalentClass ;
+   owl:annotatedTarget _:genid2 ;
+   rdfs:comment "Men’s products with secondary category Accessories."
+ ] .
+
+
+###  http://semanticweb2025.group5/vinted/Bags
+ex:Bags rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( schema:Product
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty ex:primaryCategory ;
+                                                     owl:hasValue ex:Women
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty ex:secondaryCategory ;
+                                                     owl:hasValue ex:Bags
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf ex:Women ,
+                        <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://semanticweb2025.group5/vinted/Books
+ex:Books rdf:type owl:Class ;
+         owl:equivalentClass _:genid15 ;
+         rdfs:subClassOf ex:Entertainment ,
+                         <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+_:genid15 owl:intersectionOf ( schema:Product
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ex:primaryCategory ;
+                                  owl:hasValue ex:Entertaiment
+                                ]
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ex:secondaryCategory ;
+                                  owl:hasValue ex:Books
+                                ]
+                              ) ;
+           rdf:type owl:Class .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:Books ;
+   owl:annotatedProperty owl:equivalentClass ;
+   owl:annotatedTarget _:genid15 ;
+   rdfs:comment "Book is a type of Entertainment subcategory that can only be the primary category of Entertainment and a secondary category of a Book."
+ ] .
+
+
+###  http://semanticweb2025.group5/vinted/Category
+ex:Category rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasSubcategory> ;
+                              owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Subcategory>
+                            ] .
+
+
+###  http://semanticweb2025.group5/vinted/Clothing
+ex:Clothing rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( schema:Product
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty ex:primaryCategory ;
+                                                         owl:hasValue ex:Women
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty ex:secondaryCategory ;
+                                                         owl:hasValue ex:Clothing
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf ex:Women ,
+                            <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://semanticweb2025.group5/vinted/CookwareBakeware
+ex:CookwareBakeware rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( schema:Product
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty ex:primaryCategory ;
+                                                                 owl:hasValue ex:Home
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty ex:secondaryCategory ;
+                                                                 owl:hasValue ex:Cookwarebakeware
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf ex:Home ,
+                                    <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://semanticweb2025.group5/vinted/Entertainment
+ex:Entertainment rdf:type owl:Class ;
+                 rdfs:subClassOf ex:Category .
+
+
+###  http://semanticweb2025.group5/vinted/Grooming
+ex:Grooming rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( schema:Product
+                                                       [ rdf:type owl:Class ;
+                                                         owl:complementOf [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty ex:primaryCategory ;
+                                                                            owl:someValuesFrom ex:Home
+                                                                          ]
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty ex:secondaryCategory ;
+                                                         owl:hasValue ex:Grooming
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf ex:Men ,
+                            <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://semanticweb2025.group5/vinted/Home
+ex:Home rdf:type owl:Class ;
+        rdfs:subClassOf ex:Category .
+
+
+###  http://semanticweb2025.group5/vinted/Kids
+ex:Kids rdf:type owl:Class ;
+        rdfs:subClassOf ex:Category .
+
+
+###  http://semanticweb2025.group5/vinted/Men
+ex:Men rdf:type owl:Class ;
+       rdfs:subClassOf ex:Category .
+
+
+###  http://semanticweb2025.group5/vinted/Music
+ex:Music rdf:type owl:Class ;
+         owl:equivalentClass _:genid42 ;
+         rdfs:subClassOf ex:Entertainment ,
+                         <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+_:genid42 owl:intersectionOf ( schema:Product
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ex:primaryCategory ;
+                                  owl:hasValue ex:Entertaiment
+                                ]
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ex:secondaryCategory ;
+                                  owl:hasValue ex:Music
+                                ]
+                              ) ;
+           rdf:type owl:Class .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:Music ;
+   owl:annotatedProperty owl:equivalentClass ;
+   owl:annotatedTarget _:genid42 ;
+   rdfs:comment "Music is a type of Entertainment subcategory that can only be the primary category of Entertainment and a secondary category of a Music."
+ ] .
+
+
+###  http://semanticweb2025.group5/vinted/PetCare
+ex:PetCare rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( schema:Product
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty ex:primaryCategory ;
+                                                        owl:hasValue ex:Home
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty ex:secondaryCategory ;
+                                                        owl:hasValue ex:Petcare
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf ex:Home ,
+                           <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://semanticweb2025.group5/vinted/Shoes
+ex:Shoes rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                      owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty ex:primaryCategory ;
+                                                                      owl:hasValue ex:Men
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty ex:primaryCategory ;
+                                                                      owl:hasValue ex:Women
+                                                                    ]
+                                                                  )
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty ex:secondaryCategory ;
+                                                      owl:hasValue ex:Shoes
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         rdfs:subClassOf ex:Women ,
+                         <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://semanticweb2025.group5/vinted/SmallKitchenAppliances
+ex:SmallKitchenAppliances rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( schema:Product
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty ex:primaryCategory ;
+                                                                       owl:hasValue ex:Home
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty ex:secondaryCategory ;
+                                                                       owl:hasValue ex:Smallkitchenappliances
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf ex:Home ,
+                                          <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://semanticweb2025.group5/vinted/Video
+ex:Video rdf:type owl:Class ;
+         owl:equivalentClass _:genid70 ;
+         rdfs:subClassOf ex:Entertainment ,
+                         <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+_:genid70 owl:intersectionOf ( schema:Product
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ex:primaryCategory ;
+                                  owl:hasValue ex:Entertaiment
+                                ]
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ex:secondaryCategory ;
+                                  owl:hasValue ex:Video
+                                ]
+                              ) ;
+           rdf:type owl:Class .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:Video ;
+   owl:annotatedProperty owl:equivalentClass ;
+   owl:annotatedTarget _:genid70 ;
+   rdfs:comment "A Video is a type of Entertainment subcategory that can only be the primary category of Entertainment and a secondary category of a Video."
+ ] .
+
+
+###  http://semanticweb2025.group5/vinted/Women
+ex:Women rdf:type owl:Class ;
+         rdfs:subClassOf ex:Category .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Beauty
+<http://www.co-ode.org/ontologies/ont.owl#Beauty> rdf:type owl:Class ;
+                                                  owl:equivalentClass [ owl:intersectionOf ( schema:Product
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty ex:secondaryCategory ;
+                                                                                               owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Beauty>
+                                                                                             ]
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty ex:primaryCategory ;
+                                                                                               owl:allValuesFrom ex:Women
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ] ;
+                                                  rdfs:subClassOf ex:Women ,
+                                                                  <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#FurnitureDecor
+<http://www.co-ode.org/ontologies/ont.owl#FurnitureDecor> rdf:type owl:Class ;
+                                                          owl:equivalentClass [ owl:intersectionOf ( schema:Product
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty ex:primaryCategory ;
+                                                                                                       owl:someValuesFrom ex:Kids
+                                                                                                     ]
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty ex:secondaryCategory ;
+                                                                                                       owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FurnitureDecor>
+                                                                                                     ]
+                                                                                                   ) ;
+                                                                                rdf:type owl:Class
+                                                                              ] ;
+                                                          rdfs:subClassOf ex:Kids ,
+                                                                          <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Strollers
+<http://www.co-ode.org/ontologies/ont.owl#Strollers> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty ex:primaryCategory ;
+                                                                                                  owl:someValuesFrom ex:Kids
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty ex:secondaryCategory ;
+                                                                                                  owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Strollers>
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ;
+                                                     rdfs:subClassOf ex:Kids ,
+                                                                     <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Subcategory
+<http://www.co-ode.org/ontologies/ont.owl#Subcategory> rdf:type owl:Class ;
+                                                       rdfs:subClassOf ex:Category .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Toys
+<http://www.co-ode.org/ontologies/ont.owl#Toys> rdf:type owl:Class ;
+                                                owl:equivalentClass [ owl:intersectionOf ( schema:Product
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty ex:primaryCategory ;
+                                                                                             owl:someValuesFrom ex:Kids
+                                                                                           ]
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty ex:secondaryCategory ;
+                                                                                             owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Toys>
+                                                                                           ]
+                                                                                         ) ;
+                                                                      rdf:type owl:Class
+                                                                    ] ;
+                                                rdfs:subClassOf ex:Kids ,
+                                                                <http://www.co-ode.org/ontologies/ont.owl#Subcategory> .
+
+
+###  https://schema.org/Brand
+schema:Brand rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#isBrandOf> ;
+                               owl:someValuesFrom schema:Product
+                             ] .
+
+
+###  https://schema.org/Product
+schema:Product rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty ex:secondaryCategory ;
+                                 owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Subcategory>
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ex:primaryCategory ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass ex:Category
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty schema:brand ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass schema:Brand
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty schema:name ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://semanticweb2025.group5/vinted/AbercrombieFitch
+ex:AbercrombieFitch rdf:type owl:NamedIndividual ,
+                             schema:Brand ;
+                    schema:name "Abercrombie & Fitch" .
+
+
+###  http://semanticweb2025.group5/vinted/Accessories
+ex:Accessories rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/Amazon
+ex:Amazon rdf:type owl:NamedIndividual ,
+                   schema:Brand ;
+          schema:name "Amazon" .
+
+
+###  http://semanticweb2025.group5/vinted/Bags
+ex:Bags rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/Books
+ex:Books rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/BrandUnknown
+ex:BrandUnknown rdf:type owl:NamedIndividual ,
+                         schema:Brand ;
+                schema:name "BrandUnknown" .
+
+
+###  http://semanticweb2025.group5/vinted/Chogan
+ex:Chogan rdf:type owl:NamedIndividual ,
+                   schema:Brand ;
+          schema:name "Chogan" .
+
+
+###  http://semanticweb2025.group5/vinted/Clothing
+ex:Clothing rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/Coach
+ex:Coach rdf:type owl:NamedIndividual ,
+                  schema:Brand ;
+         schema:name "Coach" .
+
+
+###  http://semanticweb2025.group5/vinted/Converse
+ex:Converse rdf:type owl:NamedIndividual ,
+                     schema:Brand ;
+            schema:name "Converse" .
+
+
+###  http://semanticweb2025.group5/vinted/Cookwarebakeware
+ex:Cookwarebakeware rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/Corningware
+ex:Corningware rdf:type owl:NamedIndividual ,
+                        schema:Brand ;
+               schema:name "Corningware" .
+
+
+###  http://semanticweb2025.group5/vinted/CostPlusWorldMarket
+ex:CostPlusWorldMarket rdf:type owl:NamedIndividual ,
+                                schema:Brand ;
+                       schema:name "Cost Plus World Market" .
+
+
+###  http://semanticweb2025.group5/vinted/CrockPot
+ex:CrockPot rdf:type owl:NamedIndividual ,
+                     schema:Brand ;
+            schema:name "Crock Pot" .
+
+
+###  http://semanticweb2025.group5/vinted/Dior
+ex:Dior rdf:type owl:NamedIndividual ,
+                 schema:Brand ;
+        schema:name "Dior" .
+
+
+###  http://semanticweb2025.group5/vinted/Dolly
+ex:Dolly rdf:type owl:NamedIndividual ,
+                  schema:Brand ;
+         schema:name "Dolly" .
+
+
+###  http://semanticweb2025.group5/vinted/Douglas
+ex:Douglas rdf:type owl:NamedIndividual ,
+                    schema:Brand ;
+           schema:name "Douglas" .
+
+
+###  http://semanticweb2025.group5/vinted/EdHardy
+ex:EdHardy rdf:type owl:NamedIndividual ,
+                    schema:Brand ;
+           schema:name "Ed Hardy" .
+
+
+###  http://semanticweb2025.group5/vinted/Empyre
+ex:Empyre rdf:type owl:NamedIndividual ,
+                   schema:Brand ;
+          schema:name "Empyre" .
+
+
+###  http://semanticweb2025.group5/vinted/Entertaiment
+ex:Entertaiment rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/Espresso
+ex:Espresso rdf:type owl:NamedIndividual ,
+                     schema:Brand ;
+            schema:name "Espresso" .
+
+
+###  http://semanticweb2025.group5/vinted/GUESS
+ex:GUESS rdf:type owl:NamedIndividual ,
+                  schema:Brand ;
+         schema:name "GUESS" .
+
+
+###  http://semanticweb2025.group5/vinted/Grooming
+ex:Grooming rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/GuyClarac
+ex:GuyClarac rdf:type owl:NamedIndividual ,
+                      schema:Brand ;
+             schema:name "Guy Clarac" .
+
+
+###  http://semanticweb2025.group5/vinted/Home
+ex:Home rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/Ideal
+ex:Ideal rdf:type owl:NamedIndividual ,
+                  schema:Brand ;
+         schema:name "Ideal" .
+
+
+###  http://semanticweb2025.group5/vinted/Jack
+ex:Jack rdf:type owl:NamedIndividual ,
+                 schema:Brand ;
+        schema:name "Jack" .
+
+
+###  http://semanticweb2025.group5/vinted/Lattafa
+ex:Lattafa rdf:type owl:NamedIndividual ,
+                    schema:Brand ;
+           schema:name "Lattafa" .
+
+
+###  http://semanticweb2025.group5/vinted/Levis
+ex:Levis rdf:type owl:NamedIndividual ,
+                  schema:Brand ;
+         schema:name "Levi's" .
+
+
+###  http://semanticweb2025.group5/vinted/Lululemon
+ex:Lululemon rdf:type owl:NamedIndividual ,
+                      schema:Brand ;
+             schema:name "Lululemon" .
+
+
+###  http://semanticweb2025.group5/vinted/Men
+ex:Men rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/Music
+ex:Music rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/NOLABEL
+ex:NOLABEL rdf:type owl:NamedIndividual ,
+                    schema:Brand ;
+           schema:name "NO LABEL" .
+
+
+###  http://semanticweb2025.group5/vinted/Nike
+ex:Nike rdf:type owl:NamedIndividual ,
+                 schema:Brand ;
+        schema:name "Nike" .
+
+
+###  http://semanticweb2025.group5/vinted/PattiSmith
+ex:PattiSmith rdf:type owl:NamedIndividual ,
+                       schema:Brand ;
+              schema:name "Patti Smith" .
+
+
+###  http://semanticweb2025.group5/vinted/Petcare
+ex:Petcare rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/Sheffield
+ex:Sheffield rdf:type owl:NamedIndividual ,
+                      schema:Brand ;
+             schema:name "Sheffield" .
+
+
+###  http://semanticweb2025.group5/vinted/Shoes
+ex:Shoes rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/Skechers
+ex:Skechers rdf:type owl:NamedIndividual ,
+                     schema:Brand ;
+            schema:name "Skechers" .
+
+
+###  http://semanticweb2025.group5/vinted/Smallkitchenappliances
+ex:Smallkitchenappliances rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/TheNorthFace
+ex:TheNorthFace rdf:type owl:NamedIndividual ,
+                         schema:Brand ;
+                schema:name "The North Face" .
+
+
+###  http://semanticweb2025.group5/vinted/TomFord
+ex:TomFord rdf:type owl:NamedIndividual ,
+                    schema:Brand ;
+           schema:name "Tom Ford" .
+
+
+###  http://semanticweb2025.group5/vinted/UniqueVintage
+ex:UniqueVintage rdf:type owl:NamedIndividual ,
+                          schema:Brand ;
+                 schema:name "Unique Vintage" .
+
+
+###  http://semanticweb2025.group5/vinted/Video
+ex:Video rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/Women
+ex:Women rdf:type owl:NamedIndividual .
+
+
+###  http://semanticweb2025.group5/vinted/adidas
+ex:adidas rdf:type owl:NamedIndividual ,
+                   schema:Brand ;
+          schema:name "adidas" .
+
+
+###  http://semanticweb2025.group5/vinted/alphie
+ex:alphie rdf:type owl:NamedIndividual ,
+                   schema:Brand ;
+          schema:name "alphie" .
+
+
+###  http://semanticweb2025.group5/vinted/drloton
+ex:drloton rdf:type owl:NamedIndividual ,
+                    schema:Brand ;
+           schema:name "drloton" .
+
+
+###  http://semanticweb2025.group5/vinted/ibex
+ex:ibex rdf:type owl:NamedIndividual ,
+                 schema:Brand ;
+        schema:name "ibex" .
+
+
+###  http://semanticweb2025.group5/vinted/item_AbercrombieFitchCroppedSweaterJuniorsOrWomensSizeXSFall_7057532907
+ex:item_AbercrombieFitchCroppedSweaterJuniorsOrWomensSizeXSFall_7057532907 rdf:type owl:NamedIndividual ,
+                                                                                    schema:Product ;
+                                                                           ex:primaryCategory ex:Women ;
+                                                                           ex:secondaryCategory ex:Clothing ;
+                                                                           schema:brand ex:AbercrombieFitch ;
+                                                                           schema:color "White" ;
+                                                                           schema:itemCondition "Very good" ;
+                                                                           schema:name "Abercrombie & Fitch Cropped Sweater Juniors Or Women’s Size XS Fall" ;
+                                                                           schema:size "4" ;
+                                                                           schema:price 5.0 ;
+                                                                           schema:url <https://www.vinted.com/items/7057532907-abercrombie-fitch-cropped-sweater-juniors-or-womens-size-xs-fall?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_BillieEilishHitMeHardAndSoft_6915157257
+ex:item_BillieEilishHitMeHardAndSoft_6915157257 rdf:type owl:NamedIndividual ,
+                                                         schema:Product ;
+                                                ex:primaryCategory ex:Entertaiment ;
+                                                ex:secondaryCategory ex:Music ;
+                                                schema:brand ex:BrandUnknown ;
+                                                schema:color "not specified" ;
+                                                schema:itemCondition "Very good" ;
+                                                schema:name "Hit me hard and soft album record" ;
+                                                schema:size "not specified" ;
+                                                schema:price 11.0 ;
+                                                schema:url <https://www.vinted.com/items/6915157257-hit-me-hard-and-soft-album-record?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_BlackAndWhiteConverseShoes_7072439359
+ex:item_BlackAndWhiteConverseShoes_7072439359 rdf:type owl:NamedIndividual ,
+                                                       schema:Product ;
+                                              ex:primaryCategory ex:Women ;
+                                              ex:secondaryCategory ex:Shoes ;
+                                              schema:brand ex:Converse ;
+                                              schema:color "Black, White" ;
+                                              schema:itemCondition "Very good" ;
+                                              schema:name "black and white Converse shoes" ;
+                                              schema:size "8" ;
+                                              schema:price 16.0 ;
+                                              schema:url <https://www.vinted.com/items/7072439359-black-and-white-converse-shoes?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_BlackRelaxEmpyreSkaterBlack_7071973949
+ex:item_BlackRelaxEmpyreSkaterBlack_7071973949 rdf:type owl:NamedIndividual ,
+                                                        schema:Product ;
+                                               ex:primaryCategory ex:Women ;
+                                               ex:secondaryCategory ex:Clothing ;
+                                               schema:brand ex:Empyre ;
+                                               schema:color "Black, Gray" ;
+                                               schema:itemCondition "Very good" ;
+                                               schema:name "Black Relax Empyre Skater Black" ;
+                                               schema:size "4" ;
+                                               schema:price 13.0 ;
+                                               schema:url <https://www.vinted.com/items/7071973949-black-relax-empyre-skater-black?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_ButterflyEffectCollectionDVD_2653528041
+ex:item_ButterflyEffectCollectionDVD_2653528041 rdf:type owl:NamedIndividual ,
+                                                         schema:Product ;
+                                                ex:primaryCategory ex:Entertaiment ;
+                                                ex:secondaryCategory ex:Video ;
+                                                schema:brand ex:BrandUnknown ;
+                                                schema:color "not specified" ;
+                                                schema:itemCondition "Very good" ;
+                                                schema:name "The Butterfly Effect Collection DVD" ;
+                                                schema:size "not specified" ;
+                                                schema:price 1.0 ;
+                                                schema:url <https://www.vinted.com/items/2653528041-the-butterfly-effect-collection-dvd?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_CasseroleSetOf4_6733481436
+ex:item_CasseroleSetOf4_6733481436 rdf:type owl:NamedIndividual ,
+                                            schema:Product ;
+                                   ex:primaryCategory ex:Home ;
+                                   ex:secondaryCategory ex:Cookwarebakeware ;
+                                   schema:brand ex:Dolly ;
+                                   schema:color "White" ;
+                                   schema:itemCondition "New with tags" ;
+                                   schema:name "casserole set of 4" ;
+                                   schema:size "not specified" ;
+                                   schema:price 20.0 ;
+                                   schema:url <https://www.vinted.com/items/6733481436-casserole-set-of-4?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_Chogan118_3162020098
+ex:item_Chogan118_3162020098 rdf:type owl:NamedIndividual ,
+                                      schema:Product ;
+                             ex:primaryCategory ex:Men ;
+                             ex:secondaryCategory ex:Grooming ;
+                             schema:brand ex:Chogan ;
+                             schema:color "not specified" ;
+                             schema:itemCondition "New with tags" ;
+                             schema:name "Chogan Parfüm Nr.118" ;
+                             schema:size "50ml" ;
+                             schema:price 45.0 ;
+                             schema:url <https://www.vinted.com/items/3162020098-chogan-parfum-nr118-50ml> .
+
+
+###  http://semanticweb2025.group5/vinted/item_CoachSignaturePurse_7051847400
+ex:item_CoachSignaturePurse_7051847400 rdf:type owl:NamedIndividual ,
+                                                schema:Product ;
+                                       ex:primaryCategory ex:Women ;
+                                       ex:secondaryCategory ex:Bags ;
+                                       schema:brand ex:Coach ;
+                                       schema:color "Black" ;
+                                       schema:itemCondition "Very good " ;
+                                       schema:name "Coach signature Purse" ;
+                                       schema:size "not specified" ;
+                                       schema:price 55.0 ;
+                                       schema:url <https://www.vinted.com/items/7051847400-coach-signature-purse?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_CoffeeShopClearanceEspressoMachine_7044963349
+ex:item_CoffeeShopClearanceEspressoMachine_7044963349 rdf:type owl:NamedIndividual ,
+                                                               schema:Product ;
+                                                      ex:primaryCategory ex:Home ;
+                                                      ex:secondaryCategory ex:Smallkitchenappliances ;
+                                                      schema:brand ex:Espresso ;
+                                                      schema:color "Silver" ;
+                                                      schema:itemCondition "Very Good " ;
+                                                      schema:name "Coffee shop clearance: Espresso machine - great deal" ;
+                                                      schema:size "not specified" ;
+                                                      schema:price 55.0 ;
+                                                      schema:url <https://www.vinted.com/items/7044963349-coffee-shop-clearance-espresso-machine-great-deal?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_Corningware_7059123811
+ex:item_Corningware_7059123811 rdf:type owl:NamedIndividual ,
+                                        schema:Product ;
+                               ex:primaryCategory ex:Home ;
+                               ex:secondaryCategory ex:Cookwarebakeware ;
+                               schema:brand ex:Corningware ;
+                               schema:color "White" ;
+                               schema:itemCondition "Very good" ;
+                               schema:name "Corningware" ;
+                               schema:size "not specified" ;
+                               schema:price 12.0 ;
+                               schema:url <https://www.vinted.com/items/7059123811-corningware?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_CrockPotSmall_7008639345
+ex:item_CrockPotSmall_7008639345 rdf:type owl:NamedIndividual ,
+                                          schema:Product ;
+                                 ex:primaryCategory ex:Home ;
+                                 ex:secondaryCategory ex:Cookwarebakeware ;
+                                 schema:brand ex:CrockPot ;
+                                 schema:color "Silver, Black" ;
+                                 schema:itemCondition "New without tags" ;
+                                 schema:name "Crock pot small" ;
+                                 schema:size "not specified" ;
+                                 schema:price 10.0 ;
+                                 schema:url <https://www.vinted.com/items/7008639345-crock-pot-small?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_CrockPot_7016875144
+ex:item_CrockPot_7016875144 rdf:type owl:NamedIndividual ,
+                                     schema:Product ;
+                            ex:primaryCategory ex:Home ;
+                            ex:secondaryCategory ex:Smallkitchenappliances ;
+                            schema:brand ex:Ideal ;
+                            schema:color "Black, Silver" ;
+                            schema:itemCondition "Good " ;
+                            schema:name "Crock pot" ;
+                            schema:size "not specified" ;
+                            schema:price 5.0 ;
+                            schema:url <https://www.vinted.com/items/7016875144-crock-pot?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_CuteVintagePolkaDotTote_7028968164
+ex:item_CuteVintagePolkaDotTote_7028968164 rdf:type owl:NamedIndividual ,
+                                                    schema:Product ;
+                                           ex:primaryCategory ex:Women ;
+                                           ex:secondaryCategory ex:Bags ;
+                                           schema:brand ex:UniqueVintage ;
+                                           schema:color "Black, White" ;
+                                           schema:itemCondition "New without tags" ;
+                                           schema:name "Cute Vintage Polka Dot Tote, Folds Up Small To Put in a Purse/Luggage, Viola' another Tote!" ;
+                                           schema:size "not specified" ;
+                                           schema:price 7.0 ;
+                                           schema:url <https://www.vinted.com/items/7028968164-cute-vintage-polka-dot-tote-folds-up-small-to-put-in-a-purseluggage-viola-another-tote?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_DiorHomme_4241982335
+ex:item_DiorHomme_4241982335 rdf:type owl:NamedIndividual ,
+                                      schema:Product ;
+                             ex:primaryCategory ex:Men ;
+                             ex:secondaryCategory ex:Grooming ;
+                             schema:brand ex:Dior ;
+                             schema:color "not specified" ;
+                             schema:itemCondition "New with tags" ;
+                             schema:name "Dior Homme After Shave" ;
+                             schema:size "not specified" ;
+                             schema:price 40.0 ;
+                             schema:url <https://www.vinted.com/items/4241982335-dior-homme-after-shave?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_EagleBelt_7065905467
+ex:item_EagleBelt_7065905467 rdf:type owl:NamedIndividual ,
+                                      schema:Product ;
+                             ex:primaryCategory ex:Men ;
+                             ex:secondaryCategory ex:Accessories ;
+                             schema:brand ex:NOLABEL ;
+                             schema:color "Black, Silver" ;
+                             schema:itemCondition "Very good" ;
+                             schema:name "Eagle Leather Belt" ;
+                             schema:size "32 in" ;
+                             schema:price 10.0 ;
+                             schema:url <https://www.vinted.com/items/7065905467-eagle-leather-belt> .
+
+
+###  http://semanticweb2025.group5/vinted/item_EdHardyBelt_7010159956
+ex:item_EdHardyBelt_7010159956 rdf:type owl:NamedIndividual ,
+                                        schema:Product ;
+                               ex:primaryCategory ex:Men ;
+                               ex:secondaryCategory ex:Accessories ;
+                               schema:brand ex:EdHardy ;
+                               schema:color "Red" ;
+                               schema:itemCondition "New with tags" ;
+                               schema:name "Ed Hardy Panther Print Red Belt With Rivet Studs" ;
+                               schema:size "Adjustable" ;
+                               schema:price 20.0 ;
+                               schema:url <https://www.vinted.com/items/7010159956-ed-hardy-mens-panther-print-red-belt-with-rivet-studs> .
+
+
+###  http://semanticweb2025.group5/vinted/item_EnhypenRomanceUntoldAlbum_6871106441
+ex:item_EnhypenRomanceUntoldAlbum_6871106441 rdf:type owl:NamedIndividual ,
+                                                      schema:Product ;
+                                             ex:primaryCategory ex:Entertaiment ;
+                                             ex:secondaryCategory ex:Music ;
+                                             schema:brand ex:BrandUnknown ;
+                                             schema:color "not specified" ;
+                                             schema:itemCondition "Very good" ;
+                                             schema:name "Enhypen Romance: Untold Engene Ver Album" ;
+                                             schema:size "not specified" ;
+                                             schema:price 5.0 ;
+                                             schema:url <https://www.vinted.com/items/6871106441-enhypen-romance-untold-engene-ver-album?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_GuyClarac_2259238450
+ex:item_GuyClarac_2259238450 rdf:type owl:NamedIndividual ,
+                                      schema:Product ;
+                             ex:primaryCategory ex:Men ;
+                             ex:secondaryCategory ex:Accessories ;
+                             schema:brand ex:GuyClarac ;
+                             schema:color "Silver" ;
+                             schema:itemCondition "Good" ;
+                             schema:name "Montre homme Guy Clarac" ;
+                             schema:size "not specified" ;
+                             schema:price 15.0 ;
+                             schema:url <https://www.vinted.com/items/2259238450-montre-homme-guy-clarac> .
+
+
+###  http://semanticweb2025.group5/vinted/item_HocusPocusCookieCutters_6964566662
+ex:item_HocusPocusCookieCutters_6964566662 rdf:type owl:NamedIndividual ,
+                                                    schema:Product ;
+                                           ex:primaryCategory ex:Home ;
+                                           ex:secondaryCategory ex:Cookwarebakeware ;
+                                           schema:brand ex:BrandUnknown ;
+                                           schema:color "Multi" ;
+                                           schema:itemCondition "New with tags" ;
+                                           schema:name "Hocus pocus cookie cutters" ;
+                                           schema:size "not specified" ;
+                                           schema:price 3.0 ;
+                                           schema:url <https://www.vinted.com/items/6964566662-hocus-pocus-cookie-cutters?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_ISpyThingThatFlingsDVD_7061364696
+ex:item_ISpyThingThatFlingsDVD_7061364696 rdf:type owl:NamedIndividual ,
+                                                   schema:Product ;
+                                          ex:primaryCategory ex:Entertaiment ;
+                                          ex:secondaryCategory ex:Video ;
+                                          schema:brand ex:BrandUnknown ;
+                                          schema:color "not specified" ;
+                                          schema:itemCondition "Good" ;
+                                          schema:name "I Spy a thing that flings and other stories DVD" ;
+                                          schema:size "not specified" ;
+                                          schema:price 5.0 ;
+                                          schema:url <https://www.vinted.com/items/7061364696-i-spy-a-thing-that-flings-and-other-stories-dvd?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_IbexBelt_7044814371
+ex:item_IbexBelt_7044814371 rdf:type owl:NamedIndividual ,
+                                     schema:Product ;
+                            ex:primaryCategory ex:Men ;
+                            ex:secondaryCategory ex:Accessories ;
+                            schema:brand ex:ibex ;
+                            schema:color "Brown, Gold" ;
+                            schema:itemCondition "Good" ;
+                            schema:name "Vintage Ibex Brown Leather Belt Men’s 46" ;
+                            schema:size "45 in" ;
+                            schema:price 40.0 ;
+                            schema:url <https://www.vinted.com/items/7044814371-vintage-ibex-brown-leather-belt-mens-46-gold-enamel-striped-buckle-preppy-twee> .
+
+
+###  http://semanticweb2025.group5/vinted/item_JackSkellington_7072326409
+ex:item_JackSkellington_7072326409 rdf:type owl:NamedIndividual ,
+                                            schema:Product ;
+                                   ex:primaryCategory ex:Home ;
+                                   ex:secondaryCategory ex:Smallkitchenappliances ;
+                                   schema:brand ex:Jack ;
+                                   schema:color "Black, White" ;
+                                   schema:itemCondition "New without tags" ;
+                                   schema:name "Jack skellington" ;
+                                   schema:size "not specified" ;
+                                   schema:price 14.0 ;
+                                   schema:url <https://www.vinted.com/items/7072326409-jack-skellington?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_JustKids_7075705549
+ex:item_JustKids_7075705549 rdf:type owl:NamedIndividual ,
+                                     schema:Product ;
+                            ex:primaryCategory ex:Entertaiment ;
+                            ex:secondaryCategory ex:Books ;
+                            schema:brand ex:PattiSmith ;
+                            schema:color "English" ;
+                            schema:itemCondition "Very good" ;
+                            schema:name "Just Kids by Patti Smith" ;
+                            schema:size "9.78E+12" ;
+                            schema:price 3.0 ;
+                            schema:url <https://www.vinted.com/items/7075705549-just-kids-by-patti-smith?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_KhakiBoots_7029761685
+ex:item_KhakiBoots_7029761685 rdf:type owl:NamedIndividual ,
+                                       schema:Product ;
+                              ex:primaryCategory ex:Women ;
+                              ex:secondaryCategory ex:Shoes ;
+                              schema:brand ex:BrandUnknown ;
+                              schema:color "Khaki" ;
+                              schema:itemCondition "Very good" ;
+                              schema:name "khaki green knee high boots punk with buckle detail" ;
+                              schema:size "7" ;
+                              schema:price 20.0 ;
+                              schema:url <https://www.vinted.com/items/7029761685-khaki-green-knee-high-boots-punk-with-buckle-detail?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_LanaDelReyChemtrailsCD_6721147567
+ex:item_LanaDelReyChemtrailsCD_6721147567 rdf:type owl:NamedIndividual ,
+                                                   schema:Product ;
+                                          ex:primaryCategory ex:Entertaiment ;
+                                          ex:secondaryCategory ex:Music ;
+                                          schema:brand ex:BrandUnknown ;
+                                          schema:color "not specified" ;
+                                          schema:itemCondition "Very good" ;
+                                          schema:name "Lana Del Rey \"Chemtrails over the Country Club\" CD" ;
+                                          schema:size "not specified" ;
+                                          schema:price 5.0 ;
+                                          schema:url <https://www.vinted.com/items/6721147567-lana-del-rey-chemtrails-over-the-country-club-cd?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_LattafaDukhan_7007038949
+ex:item_LattafaDukhan_7007038949 rdf:type owl:NamedIndividual ,
+                                          schema:Product ;
+                                 ex:primaryCategory ex:Men ;
+                                 ex:secondaryCategory ex:Grooming ;
+                                 schema:brand ex:Lattafa ;
+                                 schema:color "Amber" ;
+                                 schema:itemCondition "New with tags" ;
+                                 schema:name "Lattafa Dukhan Perfume / Cologne" ;
+                                 schema:size "5ml" ;
+                                 schema:price 5.0 ;
+                                 schema:url <https://www.vinted.com/items/7007038949-lattafa-dukhan-perfume-cologne?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_LeopardPrintLingerieDress_7072400616
+ex:item_LeopardPrintLingerieDress_7072400616 rdf:type owl:NamedIndividual ,
+                                                      schema:Product ;
+                                             ex:primaryCategory ex:Women ;
+                                             ex:secondaryCategory ex:Clothing ;
+                                             schema:brand ex:BrandUnknown ;
+                                             schema:color "Beige, Black" ;
+                                             schema:itemCondition "Good" ;
+                                             schema:name "Leopard print lingerie dress" ;
+                                             schema:size "4" ;
+                                             schema:price 7.0 ;
+                                             schema:url <https://www.vinted.com/items/7072400616-leopard-print-lingerie-dress?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_LevisSize27_7061400391
+ex:item_LevisSize27_7061400391 rdf:type owl:NamedIndividual ,
+                                        schema:Product ;
+                               ex:primaryCategory ex:Women ;
+                               ex:secondaryCategory ex:Clothing ;
+                               schema:brand ex:Levis ;
+                               schema:color "Light blue" ;
+                               schema:itemCondition "Very good" ;
+                               schema:name "Levi’s size 27" ;
+                               schema:size "10" ;
+                               schema:price 6.0 ;
+                               schema:url <https://www.vinted.com/items/7061400391-levis-size-27?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_LionRecoveryCollar_6964764295
+ex:item_LionRecoveryCollar_6964764295 rdf:type owl:NamedIndividual ,
+                                               schema:Product ;
+                                      ex:primaryCategory ex:Home ;
+                                      ex:secondaryCategory ex:Petcare ;
+                                      schema:brand ex:alphie ;
+                                      schema:color "Brown" ;
+                                      schema:itemCondition "New without tags" ;
+                                      schema:name "Lion recovery collar" ;
+                                      schema:size "L" ;
+                                      schema:price 3.0 ;
+                                      schema:url <https://www.vinted.com/items/6964764295-lion-recovery-collar?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_LululemonDualPouchWristletBlackGoldWordmark_7065918959
+ex:item_LululemonDualPouchWristletBlackGoldWordmark_7065918959 rdf:type owl:NamedIndividual ,
+                                                                        schema:Product ;
+                                                               ex:primaryCategory ex:Women ;
+                                                               ex:secondaryCategory ex:Bags ;
+                                                               schema:brand ex:Lululemon ;
+                                                               schema:color "Black, Gold" ;
+                                                               schema:itemCondition "New with tags" ;
+                                                               schema:name "Lululemon Dual Pouch Wristlet Black and Gold Wordmark New With Tags" ;
+                                                               schema:size "not specified" ;
+                                                               schema:price 20.0 ;
+                                                               schema:url <https://www.vinted.com/items/7065918959-lululemon-dual-pouch-wristlet-black-and-gold-wordmark-new-with-tags?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_LululemonTop_7058582204
+ex:item_LululemonTop_7058582204 rdf:type owl:NamedIndividual ,
+                                         schema:Product ;
+                                ex:primaryCategory ex:Women ;
+                                ex:secondaryCategory ex:Clothing ;
+                                schema:brand ex:Lululemon ;
+                                schema:color "White" ;
+                                schema:itemCondition "Very good" ;
+                                schema:name "Lululemon top" ;
+                                schema:size "4" ;
+                                schema:price 10.0 ;
+                                schema:url <https://www.vinted.com/items/7058582204-lululemon-top?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_MidwestSpreePetCarrier_7066098977
+ex:item_MidwestSpreePetCarrier_7066098977 rdf:type owl:NamedIndividual ,
+                                                   schema:Product ;
+                                          ex:primaryCategory ex:Home ;
+                                          ex:secondaryCategory ex:Petcare ;
+                                          schema:brand ex:midwest ;
+                                          schema:color "Light blue, Gray" ;
+                                          schema:itemCondition "New without tags" ;
+                                          schema:name "Midwest Spree hard sided plastic extra vented pet carrier" ;
+                                          schema:size "S" ;
+                                          schema:price 18.0 ;
+                                          schema:url <https://www.vinted.com/items/7066098977-midwest-spree-hard-sided-plastic-extra-vented-pet-carrier?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_NF_Beanie_7065948958
+ex:item_NF_Beanie_7065948958 rdf:type owl:NamedIndividual ,
+                                      schema:Product ;
+                             ex:primaryCategory ex:Men ;
+                             ex:secondaryCategory ex:Accessories ;
+                             schema:brand ex:TheNorthFace ;
+                             schema:color "Navy" ;
+                             schema:itemCondition "Very good" ;
+                             schema:name "Vintage North Face Navy Blue Men’s Beanie" ;
+                             schema:size "One size" ;
+                             schema:price 15.0 ;
+                             schema:url <https://www.vinted.com/items/7065948958-vintage-north-face-navy-blue-mens-beanie> .
+
+
+###  http://semanticweb2025.group5/vinted/item_NikeInfinityFlynitWomens_7051252291
+ex:item_NikeInfinityFlynitWomens_7051252291 rdf:type owl:NamedIndividual ,
+                                                     schema:Product ;
+                                            ex:primaryCategory ex:Women ;
+                                            ex:secondaryCategory ex:Shoes ;
+                                            schema:brand ex:Nike ;
+                                            schema:color "White" ;
+                                            schema:itemCondition "Very good" ;
+                                            schema:name "Nike Infinity Flynit Women's" ;
+                                            schema:size "8" ;
+                                            schema:price 20.0 ;
+                                            schema:url <https://www.vinted.com/items/7051252291-nike-infinity-flynit-womens?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_PageMasterDVD_5785766723
+ex:item_PageMasterDVD_5785766723 rdf:type owl:NamedIndividual ,
+                                          schema:Product ;
+                                 ex:primaryCategory ex:Entertaiment ;
+                                 ex:secondaryCategory ex:Video ;
+                                 schema:brand ex:BrandUnknown ;
+                                 schema:color "not specified" ;
+                                 schema:itemCondition "Very good" ;
+                                 schema:name "The Page master dvd movie" ;
+                                 schema:size "not specified" ;
+                                 schema:price 2.0 ;
+                                 schema:url <https://www.vinted.com/items/5785766723-the-page-master-dvd-movie?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_PapaRoachParamourSessionsCD_7072381990
+ex:item_PapaRoachParamourSessionsCD_7072381990 rdf:type owl:NamedIndividual ,
+                                                        schema:Product ;
+                                               ex:primaryCategory ex:Entertaiment ;
+                                               ex:secondaryCategory ex:Music ;
+                                               schema:brand ex:BrandUnknown ;
+                                               schema:color "not specified" ;
+                                               schema:itemCondition "Good" ;
+                                               schema:name "Papa Roach : The Paramour Sessions CD (2006) Geffen Nu-Metal B0007496-02 Club Edition" ;
+                                               schema:size "not specified" ;
+                                               schema:price 6.0 ;
+                                               schema:url <https://www.vinted.com/items/7072381990-papa-roach-the-paramour-sessions-cd-2006-geffen-nu-metal-b0007496-02-club-edition?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_Prevention_7051278486
+ex:item_Prevention_7051278486 rdf:type owl:NamedIndividual ,
+                                       schema:Product ;
+                              ex:primaryCategory ex:Home ;
+                              ex:secondaryCategory ex:Petcare ;
+                              schema:brand ex:drloton ;
+                              schema:color "White, Mint" ;
+                              schema:itemCondition "New with tags" ;
+                              schema:name "Prevention" ;
+                              schema:size "not specified" ;
+                              schema:price 6.0 ;
+                              schema:url <https://www.vinted.com/items/7051278486-prevention?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_SambaAdidasLikeNew_7047990548
+ex:item_SambaAdidasLikeNew_7047990548 rdf:type owl:NamedIndividual ,
+                                               schema:Product ;
+                                      ex:primaryCategory ex:Women ;
+                                      ex:secondaryCategory ex:Shoes ;
+                                      schema:brand ex:adidas ;
+                                      schema:color "Black" ;
+                                      schema:itemCondition "New without tags" ;
+                                      schema:name "Samba Adidas like new" ;
+                                      schema:size "7.5" ;
+                                      schema:price 50.0 ;
+                                      schema:url <https://www.vinted.com/items/7047990548-samba-adidas-like-new?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_SantaClausIsComingDVD_7067387954
+ex:item_SantaClausIsComingDVD_7067387954 rdf:type owl:NamedIndividual ,
+                                                  schema:Product ;
+                                         ex:primaryCategory ex:Entertaiment ;
+                                         ex:secondaryCategory ex:Video ;
+                                         schema:brand ex:BrandUnknown ;
+                                         schema:color "not specified" ;
+                                         schema:itemCondition "Good" ;
+                                         schema:name "Santa Claus is coming to Town DVD" ;
+                                         schema:size "not specified" ;
+                                         schema:price 3.0 ;
+                                         schema:url <https://www.vinted.com/items/7067387954-santa-claus-is-coming-to-town-dvd?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_SimpsonsCollectorEditionDVD_7072326366
+ex:item_SimpsonsCollectorEditionDVD_7072326366 rdf:type owl:NamedIndividual ,
+                                                        schema:Product ;
+                                               ex:primaryCategory ex:Entertaiment ;
+                                               ex:secondaryCategory ex:Video ;
+                                               schema:brand ex:BrandUnknown ;
+                                               schema:color "not specified" ;
+                                               schema:itemCondition "Very good" ;
+                                               schema:name "The Simpsons DVD Collector’s Edition/ seasons 6 & 8" ;
+                                               schema:size "not specified" ;
+                                               schema:price 18.0 ;
+                                               schema:url <https://www.vinted.com/items/7072326366-the-simpsons-dvd-collectors-edition-seasons-6-8?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_SpoonTeabagPlate_6377063646
+ex:item_SpoonTeabagPlate_6377063646 rdf:type owl:NamedIndividual ,
+                                             schema:Product ;
+                                    ex:primaryCategory ex:Home ;
+                                    ex:secondaryCategory ex:Smallkitchenappliances ;
+                                    schema:brand ex:CostPlusWorldMarket ;
+                                    schema:color "Brown, Black" ;
+                                    schema:itemCondition "New without tags" ;
+                                    schema:name "Spoon/teabag plate" ;
+                                    schema:size "not specified" ;
+                                    schema:price 3.0 ;
+                                    schema:url <https://www.vinted.com/items/6377063646-spoonteabag-plate?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_SpringerSpaniel_5766048610
+ex:item_SpringerSpaniel_5766048610 rdf:type owl:NamedIndividual ,
+                                            schema:Product ;
+                                   ex:primaryCategory ex:Home ;
+                                   ex:secondaryCategory ex:Petcare ;
+                                   schema:brand ex:Douglas ;
+                                   schema:color "Brown" ;
+                                   schema:itemCondition "New without tags" ;
+                                   schema:name "Three year old springer spaniel" ;
+                                   schema:size "not specified" ;
+                                   schema:price 15.0 ;
+                                   schema:url <https://www.vinted.com/items/5766048610-three-year-old-springer-spaniel?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_Steamer_7070621775
+ex:item_Steamer_7070621775 rdf:type owl:NamedIndividual ,
+                                    schema:Product ;
+                           ex:primaryCategory ex:Home ;
+                           ex:secondaryCategory ex:Smallkitchenappliances ;
+                           schema:brand ex:Amazon ;
+                           schema:color "White " ;
+                           schema:itemCondition "New without tags" ;
+                           schema:name "Steamer" ;
+                           schema:size "not specified" ;
+                           schema:price 10.0 ;
+                           schema:url <https://www.vinted.com/items/7070621775-steamer?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_StrawberryDish_7051854690
+ex:item_StrawberryDish_7051854690 rdf:type owl:NamedIndividual ,
+                                           schema:Product ;
+                                  ex:primaryCategory ex:Home ;
+                                  ex:secondaryCategory ex:Cookwarebakeware ;
+                                  schema:brand ex:Sheffield ;
+                                  schema:color "White" ;
+                                  schema:itemCondition "New without tags" ;
+                                  schema:name "Strawberry dish" ;
+                                  schema:size "not specified" ;
+                                  schema:price 5.0 ;
+                                  schema:url <https://www.vinted.com/items/7051854690-strawberry-dish?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_SwingingPetBed_7035200361
+ex:item_SwingingPetBed_7035200361 rdf:type owl:NamedIndividual ,
+                                           schema:Product ;
+                                  ex:primaryCategory ex:Home ;
+                                  ex:secondaryCategory ex:Petcare ;
+                                  schema:brand ex:Amazon ;
+                                  schema:color "Mustard, Brown" ;
+                                  schema:itemCondition "New without tags" ;
+                                  schema:name "Swinging pet bed" ;
+                                  schema:size "L" ;
+                                  schema:price 30.0 ;
+                                  schema:url <https://www.vinted.com/items/7035200361-swinging-pet-bed?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_TF_OudWood_7065882664
+ex:item_TF_OudWood_7065882664 rdf:type owl:NamedIndividual ,
+                                       schema:Product ;
+                              ex:primaryCategory ex:Men ;
+                              ex:secondaryCategory ex:Grooming ;
+                              schema:brand ex:TomFord ;
+                              schema:color "not specified" ;
+                              schema:itemCondition "New with tags" ;
+                              schema:name "Tom Ford Oud Wood Eau de Parfum" ;
+                              schema:size "100ml" ;
+                              schema:price 75.0 ;
+                              schema:url <https://www.vinted.com/items/7065882664-tom-ford-oud-wood-eau-de-parfum?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_TaylorSwiftMidnightsMoonstoneBlue_6431064401
+ex:item_TaylorSwiftMidnightsMoonstoneBlue_6431064401 rdf:type owl:NamedIndividual ,
+                                                              schema:Product ;
+                                                     ex:primaryCategory ex:Entertaiment ;
+                                                     ex:secondaryCategory ex:Music ;
+                                                     schema:brand ex:BrandUnknown ;
+                                                     schema:color "not specified" ;
+                                                     schema:itemCondition "New without tags" ;
+                                                     schema:name "Midnights Taylor Swift moonstone blue ed" ;
+                                                     schema:size "not specified" ;
+                                                     schema:price 12.0 ;
+                                                     schema:url <https://www.vinted.com/items/6431064401-midnights-taylor-swift-moonstone-blue-ed?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_VintageGuessShoulderBag_7059028695
+ex:item_VintageGuessShoulderBag_7059028695 rdf:type owl:NamedIndividual ,
+                                                    schema:Product ;
+                                           ex:primaryCategory ex:Women ;
+                                           ex:secondaryCategory ex:Bags ;
+                                           schema:brand ex:GUESS ;
+                                           schema:color "Purple" ;
+                                           schema:itemCondition "Satisfactory" ;
+                                           schema:name "vintage guess shoulder bag" ;
+                                           schema:size "not specified" ;
+                                           schema:price 19.0 ;
+                                           schema:url <https://www.vinted.com/items/7059028695-vintage-guess-shoulder-bag?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_VintageKoltovBlackShoulderBag_7070486725
+ex:item_VintageKoltovBlackShoulderBag_7070486725 rdf:type owl:NamedIndividual ,
+                                                          schema:Product ;
+                                                 ex:primaryCategory ex:Women ;
+                                                 ex:secondaryCategory ex:Bags ;
+                                                 schema:brand ex:koltov ;
+                                                 schema:color "Black, Silver" ;
+                                                 schema:itemCondition "Very good" ;
+                                                 schema:name "Vintage Koltov Black Shoulder Bag" ;
+                                                 schema:size "not specified" ;
+                                                 schema:price 23.0 ;
+                                                 schema:url <https://www.vinted.com/items/7070486725-vintage-koltov-black-shoulder-bag?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/item_Zapatillas_7063942633
+ex:item_Zapatillas_7063942633 rdf:type owl:NamedIndividual ,
+                                       schema:Product ;
+                              ex:primaryCategory ex:Women ;
+                              ex:secondaryCategory ex:Shoes ;
+                              schema:brand ex:Skechers ;
+                              schema:color "Black" ;
+                              schema:itemCondition "Very good" ;
+                              schema:name "Zapatillas" ;
+                              schema:size "7" ;
+                              schema:price 20.0 ;
+                              schema:url <https://www.vinted.com/items/7063942633-zapatillas?referrer=catalog> .
+
+
+###  http://semanticweb2025.group5/vinted/koltov
+ex:koltov rdf:type owl:NamedIndividual ,
+                   schema:Brand ;
+          schema:name "koltov" .
+
+
+###  http://semanticweb2025.group5/vinted/midwest
+ex:midwest rdf:type owl:NamedIndividual ,
+                    schema:Brand ;
+           schema:name "midwest" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
