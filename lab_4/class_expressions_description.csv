@@ -1,0 +1,16 @@
+﻿class_name,Description,URI,class_expression,sufficient/nescessay
+Books,Book is a type of Entertainment subcategory that can only be the primary category of Entertainment and a secondary category of a Book.,http://semanticweb2025.group5/vinted/Books,Product and (primaryCategory value Entertaiment) and (secondaryCategory value Books),both
+Music,Music is a type of Entertainment subcategory that can only be the primary category of Entertainment and a secondary category of a Music.,http://semanticweb2025.group5/vinted/Music,Product and (primaryCategory value Entertaiment) and (secondaryCategory value Music),both
+Video,A Video is a type of Entertainment subcategory that can only be the primary category of Entertainment and a secondary category of a Video.,http://semanticweb2025.group5/vinted/Video,Product and(primaryCategory value Entertaiment) and (secondaryCategory value Video),both
+Grooming ,"A Grooming product for Men is any product whose secondary category is Grooming, and whose primary category is not Home.",http://semanticweb2025.group5/vinted/Grooming,Product and (not (primaryCategory some Home)) and (secondaryCategory value Grooming),both
+Accessories,Men`s products with secondary category Accessories.,http://semanticweb2025.group5/vinted/Accessories,Product and (secondaryCategory value Accessories) and (primaryCategory value Men),both
+Shoes,Shoes either for Women or for Men.,http://semanticweb2025.group5/vinted/Shoes,((primaryCategory value Men) or (primaryCategory value Women)) and (secondaryCategory value Shoes),both
+Beauty,"Beauty products whose primary category, if any, is only Women.",http://www.co-ode.org/ontologies/ont.owl#Beauty,Product and (secondaryCategory some Beauty) and (primaryCategory only Women) ,both
+Strollers,Kids products with secondary category Strollers.,http://www.co-ode.org/ontologies/ont.owl#Strollers,Product and (secondaryCategory some Strollers) and (primaryCategory some Kids),both
+Bags,Women`s products with secondary category Bags.,http://semanticweb2025.group5/vinted/Bags,Product and (primaryCategory value Women) and (secondaryCategory value Bags),both
+CookwareBakeware,Home products with secondary category Cookware and Bakeware.,http://semanticweb2025.group5/vinted/CookwareBakeware,Product and (secondaryCategory value Cookwarebakeware) and (primaryCategory value Home),both
+SmallKitchenAppliances,Home products with secondary category Small Kitchen Appliances,http://semanticweb2025.group5/vinted/SmallKitchenAppliances,Product and (secondaryCategory value Smallkitchenappliances) and (primaryCategory value Home),both
+PetCare,Home products with secondary categoryPetCare,http://semanticweb2025.group5/vinted/PetCare,Product and (secondaryCategory value Petcare) and (primaryCategory value Home),both
+Toys,Kids products with secondary category Toys,http://www.co-ode.org/ontologies/ont.owl#Toys,Product and (secondaryCategory some Toys) and (primaryCategory some Kids),both
+Clothing,Women`s products with secondary category Clothing.,http://semanticweb2025.group5/vinted/Clothing,Product and (primaryCategory value Women) and (secondaryCategory value Clothing),both
+FurnitureDecor,Kids products with secondary category Furniture & Decor.,http://www.co-ode.org/ontologies/ont.owl#FurnitureDecor,Product and (secondaryCategory some FurnitureDecor) and (primaryCategory some Kids),both
