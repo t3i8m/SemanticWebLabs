@@ -409,6 +409,8 @@
               :SpiceLevel .
 
 
+
+
 ###  http://www.semanticweb.org/timur/ontologies/2025/9/untitled-ontology-13#Low
 :Low rdf:type owl:NamedIndividual ,
               :SpiceLevel .
