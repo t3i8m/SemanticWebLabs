@@ -213,11 +213,6 @@
 
 
 
-
-
-
-
-
 ###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Prince_Harry_Duke_of_Sussex
 :Prince_Harry_Duke_of_Sussex rdf:type owl:NamedIndividual ;
                              :hasFather :Charles_III ;
