@@ -214,7 +214,6 @@
 :LowCaloriePizza rdf:type owl:Class ;
                  rdfs:subClassOf :Pizza .
 
-
 ###  http://www.semanticweb.org/timur/ontologies/2025/9/untitled-ontology-13/MargheritaPizza
 :MargheritaPizza rdf:type owl:Class ;
                  rdfs:subClassOf :NamedPizza ,
