@@ -36,7 +36,6 @@
 :hasIngredient rdf:type owl:ObjectProperty ;
                owl:inverseOf :isIngredientOf .
 
-
 ###  http://www.semanticweb.org/timur/ontologies/2025/9/untitled-ontology-13/hasTopping
 :hasTopping rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :hasIngredient ;
