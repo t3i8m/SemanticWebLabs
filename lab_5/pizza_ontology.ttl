@@ -210,7 +210,6 @@
 :JalapenoPepperTopping rdf:type owl:Class ;
                        rdfs:subClassOf :PepperTopping .
 
-
 ###  http://www.semanticweb.org/timur/ontologies/2025/9/untitled-ontology-13/LowCaloriePizza
 :LowCaloriePizza rdf:type owl:Class ;
                  rdfs:subClassOf :Pizza .
