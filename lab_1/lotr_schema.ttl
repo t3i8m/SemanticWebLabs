@@ -30,4 +30,3 @@ lotr:hasFriend a rdf:Property ;
 lotr:isBearerOf a rdf:Property ;
     rdfs:domain lotr:Character ;
     rdfs:range lotr:Artifact .
-
