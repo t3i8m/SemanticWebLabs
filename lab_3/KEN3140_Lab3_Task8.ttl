@@ -239,7 +239,6 @@
                     :hasFather :King_George_VI ;
                     :hasMother :Queen_Elizabeth_The_Queen_Mother .
 
-
 ###  http://www.semanticweb.org/rishabhjakhar/ontologies/2024/8/KEN3140_Lab#Queen_Elizabeth_The_Queen_Mother
 :Queen_Elizabeth_The_Queen_Mother rdf:type owl:NamedIndividual .
 
